@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dấu Ấn Anh Hùng Dân Tộc | Lớp 12A9 – THPT Kế Sách</title>
+    <meta name="description" content="Dự án học tập tương tác về những anh hùng và dấu mốc lịch sử Việt Nam – thực hiện bởi tập thể lớp 12A9, Trường THPT Kế Sách.">
+    <meta name="theme-color" content="#5b1017">
+
+    <!-- Font Awesome 6 Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN MUST be loaded before tailwind.config script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        crimson: {
+                            950: '#4a0000',
+                            900: '#660000',
+                            800: '#800000',
+                            DEFAULT: '#990000',
+                            light: '#b30000'
+                        },
+                        gold: {
+                            100: '#fffbea',
+                            300: '#ffe57f',
+                            400: '#ffd700',
+                            DEFAULT: '#d4af37',
+                            dark: '#b38f24',
+                            darker: '#8c6c13'
+                        },
+                        parchment: {
+                            DEFAULT: '#fffdf5',
+                            dark: '#f5efeb',
+                            deep: '#eadecc'
+                        },
+                        mahogany: {
+                            DEFAULT: '#2a1a0a',
+                            light: '#3d2812',
+                            dark: '#1a1006'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fffdf5;
+            color: #2a1a0a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-heading {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Historic metallic gold border effect */
+        .gold-border {
+            border-color: #d4af37;
+            box-shadow: 0 4px 20px rgba(153, 0, 0, 0.08);
+        }
+
+        /* Gold text gradient */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #8c6c13 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Page transition animation */
+        .spa-tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .spa-tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5efeb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #990000;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #660000;
+        }
+
+        /* Active Nav Link Marker */
+        .nav-link.active-nav {
+            color: #ffd700;
+            background-color: rgba(212, 175, 55, 0.2);
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Timeline vertical line background */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: linear-gradient(to bottom, #ffd700, #990000, #ffd700);
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+        }
+
+        /* ===== Professional visual refresh ===== */
+        :root {
+            --wine: #5b1017;
+            --wine-deep: #31090d;
+            --gold-soft: #d7b96d;
+            --paper: #fbf8f1;
+            --ink: #2d2420;
+        }
+        html { scroll-padding-top: 104px; }
+        body {
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(215,185,109,.10), transparent 26rem),
+                linear-gradient(180deg, #fbf8f1 0%, #f7f1e7 100%);
+        }
+        header {
+            background: rgba(49,9,13,.97) !important;
+            backdrop-filter: blur(14px);
+            border-bottom-color: rgba(215,185,109,.75) !important;
+        }
+        header nav { max-width: 100%; }
+        .nav-link { white-space: nowrap; }
+        .nav-link.active-nav { border-radius: 12px; }
+        .spa-tab-content.active { animation: sectionIn .42s ease both; }
+        @keyframes sectionIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-banner {
+            isolation: isolate;
+            min-height: 410px;
+            background: linear-gradient(115deg, #31090d 0%, #5b1017 55%, #7b2024 100%);
+            border: 1px solid rgba(215,185,109,.75) !important;
+            box-shadow: 0 24px 65px rgba(50,10,15,.20);
+        }
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Ba_Dinh_Square_September_2nd%2C_1945.jpg?width=1600");
+            background-size: cover;
+            background-position: center 42%;
+            opacity: .25;
+        }
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(90deg, rgba(49,9,13,.98) 0%, rgba(49,9,13,.91) 52%, rgba(49,9,13,.48) 100%);
+        }
+        .hero-banner > .absolute.inset-0 { display: none; }
+        .hero-banner h2 { text-shadow: 0 3px 18px rgba(0,0,0,.22); }
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .55rem .85rem;
+            border: 1px solid rgba(215,185,109,.48);
+            border-radius: 999px;
+            background: rgba(255,255,255,.08);
+            color: #f4d98e;
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+        .section-intro h2, #tab-timeline h2, #tab-gallery h2, #tab-quiz h2 {
+            letter-spacing: -.035em;
+        }
+        .section-rule {
+            width: 64px;
+            height: 3px;
+            margin: .85rem auto 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #9c6d24, #e3c979);
+        }
+        #tab-home .group, #character-detail-container, #quiz-container,
+        #tab-about > div, #timeline-events-container .group > div > div,
+        #gallery-grid > div {
+            box-shadow: 0 12px 34px rgba(55,31,20,.075);
+        }
+        #tab-home .group, #gallery-grid > div {
+            border-color: rgba(173,137,66,.32) !important;
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+        }
+        #tab-home .group:hover, #gallery-grid > div:hover {
+            transform: translateY(-5px);
+            border-color: #c5a052 !important;
+            box-shadow: 0 18px 42px rgba(55,31,20,.13);
+        }
+        #tab-home img, #character-detail-container img, #gallery-grid img {
+            transition: transform .55s cubic-bezier(.2,.7,.2,1);
+        }
+        #tab-home .group:hover img, #gallery-grid > div:hover img { transform: scale(1.045); }
+        #character-detail-container { border-color: rgba(173,137,66,.42) !important; }
+        #character-detail-container img { object-position: center 30%; }
+        #gallery-grid > div { overflow: hidden; }
+        #gallery-grid .gallery-credit {
+            display: inline-block;
+            margin-top: .55rem;
+            color: #8a6a2d;
+            font-size: .68rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        #gallery-grid .gallery-credit:hover { color: #7b2024; }
+        #quiz-container { border-color: rgba(173,137,66,.42) !important; }
+        .char-tab-btn { border: 1px solid transparent; }
+        .char-tab-btn.bg-crimson { box-shadow: 0 5px 14px rgba(91,16,23,.2); }
+        footer { background: linear-gradient(120deg, #31090d, #5b1017) !important; }
+        .school-credit {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: .45rem;
+            padding: .65rem 1rem;
+            border: 1px solid rgba(215,185,109,.45);
+            border-radius: 999px;
+            background: rgba(255,255,255,.07);
+            color: #f7e7bd;
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+        .about-credit {
+            border: 1px solid rgba(173,137,66,.35);
+            background: linear-gradient(135deg, #fffaf0, #f7efdf);
+            border-radius: 18px;
+            padding: 1.25rem;
+        }
+        .about-credit strong { color: #7b2024; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        button:focus-visible, a:focus-visible {
+            outline: 3px solid rgba(212,175,55,.8);
+            outline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 150px; }
+            header > div { justify-content: center !important; }
+            header nav { justify-content: center; }
+            .hero-banner { min-height: 0; padding: 1.5rem !important; }
+            .hero-banner::after { background: rgba(49,9,13,.82); }
+            .hero-banner h2 { font-size: clamp(2rem, 9vw, 3rem); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+        }
+    
+
+        /* ===== Smooth motion + interactive timeline (12A9) ===== */
+        html { scroll-behavior: smooth; }
+        body { scroll-padding-top: 112px; }
+        #reading-progress {
+            position: fixed; inset: 0 auto auto 0; z-index: 80;
+            width: 0%; height: 3px;
+            background: linear-gradient(90deg, #b88b36, #ffe6a0, #9a2731);
+            box-shadow: 0 0 12px rgba(215,185,109,.55);
+            transition: width .12s linear;
+            pointer-events: none;
+        }
+        .nav-link, button, .char-tab-btn, #tab-home .group, #gallery-grid > div {
+            transition-timing-function: cubic-bezier(.2,.75,.25,1);
+        }
+        button:not(:disabled) { transition: transform .2s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease; }
+        button:not(:disabled):active { transform: scale(.975); }
+        .spa-tab-content.active { animation: sectionIn .52s cubic-bezier(.2,.75,.25,1) both; }
+        .timeline-tools {
+            border: 1px solid rgba(173,137,66,.32);
+            border-radius: 22px;
+            padding: clamp(1rem, 2.5vw, 1.5rem);
+            background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(250,245,233,.96));
+            box-shadow: 0 14px 38px rgba(55,31,20,.07);
+        }
+        .timeline-filter {
+            display: inline-flex; align-items: center; gap: .45rem;
+            border: 1px solid rgba(173,137,66,.35); border-radius: 999px;
+            padding: .58rem .9rem; color: #654b35; background: #fff;
+            font-size: .75rem; font-weight: 800;
+        }
+        .timeline-filter:hover { border-color: #b88b36; background: #fffaf0; transform: translateY(-2px); }
+        .timeline-filter.active {
+            color: #fff4d2; background: #5b1017; border-color: #b88b36;
+            box-shadow: 0 7px 18px rgba(91,16,23,.17);
+        }
+        .timeline-field {
+            min-height: 44px; width: 100%; border: 1px solid rgba(173,137,66,.38);
+            border-radius: 12px; padding: .65rem .85rem; color: #382b24;
+            background: rgba(255,255,255,.95); outline: none; font-size: .82rem;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+        .timeline-field:focus { border-color: #ad8942; box-shadow: 0 0 0 4px rgba(215,185,109,.17); }
+        .timeline-progress-track { height: 7px; overflow: hidden; border-radius: 999px; background: #eee6d7; }
+        .timeline-progress-fill { width: 0%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#8e1d28,#d2ad5e); transition: width .18s ease; }
+        .timeline-line { isolation: isolate; }
+        .timeline-line::before {
+            width: 4px; border-radius: 999px;
+            background: linear-gradient(180deg, #e2c779 0%, #9a2731 48%, #e2c779 100%);
+            box-shadow: 0 0 12px rgba(154,39,49,.12);
+        }
+        .timeline-event {
+            position: relative; z-index: 1;
+            transition: opacity .3s ease, transform .3s ease;
+        }
+        .timeline-event[hidden] { display: none !important; }
+        .timeline-reveal {
+            opacity: 0; transform: translateY(25px) scale(.985);
+            transition: opacity .65s cubic-bezier(.2,.7,.2,1), transform .65s cubic-bezier(.2,.7,.2,1);
+        }
+        .timeline-reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+        .timeline-card {
+            position: relative; overflow: hidden;
+            border: 1px solid rgba(173,137,66,.35);
+            box-shadow: 0 12px 32px rgba(55,31,20,.075);
+            transition: transform .28s cubic-bezier(.2,.75,.25,1), box-shadow .28s ease, border-color .28s ease;
+        }
+        .timeline-card::before {
+            content: ""; position: absolute; inset: 0 auto 0 0; width: 4px;
+            background: linear-gradient(180deg,#d9bd70,#8e1d28); opacity: .0;
+            transition: opacity .25s ease;
+        }
+        .timeline-card:hover, .timeline-event.is-highlighted .timeline-card {
+            transform: translateY(-4px); border-color: #c5a052;
+            box-shadow: 0 20px 42px rgba(55,31,20,.13);
+        }
+        .timeline-card:hover::before, .timeline-event.is-highlighted .timeline-card::before { opacity: 1; }
+        .timeline-thumb { overflow: hidden; border-radius: 13px; background: #f1eadc; }
+        .timeline-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.7,.2,1); }
+        .timeline-card:hover .timeline-thumb img { transform: scale(1.07); }
+        .timeline-node {
+            box-shadow: 0 0 0 5px rgba(215,185,109,.18), 0 5px 15px rgba(91,16,23,.2);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .timeline-event:hover .timeline-node { transform: scale(1.16); box-shadow: 0 0 0 8px rgba(215,185,109,.2), 0 6px 18px rgba(91,16,23,.24); }
+        .timeline-detail {
+            display: grid; grid-template-rows: 0fr;
+            transition: grid-template-rows .38s cubic-bezier(.2,.75,.25,1), opacity .28s ease;
+            opacity: 0;
+        }
+        .timeline-detail.open { grid-template-rows: 1fr; opacity: 1; }
+        .timeline-detail-inner { min-height: 0; overflow: hidden; }
+        .timeline-detail-panel { transform: translateY(-6px); transition: transform .35s ease; }
+        .timeline-detail.open .timeline-detail-panel { transform: translateY(0); }
+        .timeline-empty {
+            border: 1px dashed rgba(173,137,66,.55); border-radius: 18px;
+            padding: 2rem 1rem; text-align: center; color: #796750; background: rgba(255,255,255,.72);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+            .timeline-card { margin-left: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            #reading-progress, .timeline-reveal, .timeline-detail, .timeline-detail-panel,
+            .timeline-card, .timeline-node, button { transition: none !important; }
+            .timeline-reveal { opacity: 1; transform: none; }
+        }
+
+    
+        /* ===== Rich history profiles and expanded timeline cards ===== */
+        .profile-wrap { color: #342a25; }
+        .profile-hero { display: grid; grid-template-columns: minmax(230px,.78fr) minmax(0,1.5fr); gap: clamp(1.2rem,3vw,2.5rem); align-items: center; }
+        .profile-hero-image { min-height: 340px; height: 100%; position: relative; overflow: hidden; border-radius: 22px; background: #eee5d5; box-shadow: 0 18px 40px rgba(50,20,16,.15); }
+        .profile-hero-image img { width: 100%; height: 100%; min-height: 340px; max-height: 470px; object-fit: cover; object-position: center 25%; }
+        .profile-image-source { position:absolute; right:12px; bottom:12px; max-width:52%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:.42rem .58rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; color:#fff5dc; background:rgba(32,20,17,.78); backdrop-filter:blur(7px); font-size:.58rem; font-weight:800; text-decoration:underline; text-underline-offset:2px; }
+        .profile-image-source:hover { background:#7b2024; }
+        .profile-image-label { position: absolute; left: 14px; bottom: 14px; display: inline-flex; gap: .5rem; align-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: .55rem .8rem; background: rgba(49,9,13,.82); color: #fff0c9; font-size: .68rem; font-weight: 800; backdrop-filter: blur(8px); }
+        .profile-eyebrow { color: #98702e; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 900; display:flex; align-items:center; gap:.5rem; }
+        .profile-hero-copy h2 { margin-top: .6rem; color: #62151c; font-family: 'Merriweather',serif; font-size: clamp(1.7rem,3.3vw,2.6rem); line-height: 1.2; font-weight: 900; }
+        .profile-subtitle { margin-top: .55rem; color: #94702e; font-weight: 800; font-size: .9rem; line-height: 1.6; }
+        .profile-intro { margin-top: 1rem; max-width: 62ch; font-size: .88rem; line-height: 1.9; color: #5c5149; }
+        .profile-place { margin-top: 1rem; display:flex; align-items:center; gap:.5rem; color:#765a39; font-size:.72rem; font-weight:800; }
+        .profile-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; margin-top:1.35rem; }
+        .profile-stat { padding:.8rem .85rem; border-radius:14px; background:linear-gradient(145deg,#fffaf0,#f5ead3); border:1px solid rgba(173,137,66,.28); min-width:0; }
+        .profile-stat span { display:block; color:#8b755c; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; }
+        .profile-stat strong { display:block; margin-top:.35rem; color:#671720; font-size:.79rem; line-height:1.4; }
+        .profile-jumpbar { display:flex; align-items:center; gap:.45rem; flex-wrap:wrap; padding:.75rem; border:1px solid rgba(173,137,66,.28); border-radius:16px; background:#fbf7ed; }
+        .profile-jumpbar > span { color:#866a3d; font-size:.68rem; font-weight:900; margin:0 .35rem; text-transform:uppercase; letter-spacing:.08em; }
+        .profile-jumpbar button { border:1px solid #e8dcc3; background:#fff; color:#6b4d39; border-radius:999px; padding:.48rem .72rem; font-size:.68rem; font-weight:800; }
+        .profile-jumpbar button:hover { background:#5b1017; color:#fff0c9; border-color:#b88b36; transform:translateY(-2px); }
+        .profile-section { scroll-margin-top:130px; padding-top:.3rem; }
+        .profile-section-heading { display:flex; gap:.85rem; align-items:center; margin-bottom:1.1rem; }
+        .profile-section-heading > span { width:42px; height:42px; flex:0 0 42px; display:grid; place-items:center; border-radius:14px; color:#fff3cf; background:linear-gradient(145deg,#7b2024,#4b0c12); font-family:'Merriweather',serif; font-weight:900; box-shadow:0 7px 18px rgba(91,16,23,.18); }
+        .profile-section-heading p { color:#9a783c; font-size:.61rem; letter-spacing:.16em; font-weight:900; }
+        .profile-section-heading h3 { color:#60151c; font-family:'Merriweather',serif; font-size:1.15rem; font-weight:900; margin-top:.12rem; }
+        .profile-prose { max-width:90ch; color:#5a5048; font-size:.86rem; line-height:1.95; }
+        .profile-milestone-list { position:relative; display:grid; gap:.75rem; padding-left:.3rem; }
+        .profile-milestone { display:grid; grid-template-columns:34px minmax(0,1fr); gap:.8rem; align-items:start; }
+        .profile-milestone-dot { width:30px; height:30px; display:grid; place-items:center; border-radius:50%; background:#f3e7cb; color:#6b1920; border:2px solid #c6a258; font-size:.67rem; font-weight:900; }
+        .profile-milestone strong { display:block; color:#7b2024; font-size:.78rem; font-weight:900; }
+        .profile-milestone p { margin-top:.2rem; color:#62574c; font-size:.77rem; line-height:1.7; }
+        .profile-achievement-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; list-style:none; padding:0; }
+        .profile-achievement-list li { position:relative; padding:.95rem 1rem .95rem 2.5rem; border:1px solid #eee1c8; border-radius:15px; background:linear-gradient(140deg,#fff,#fbf7ed); color:#51473e; font-size:.77rem; line-height:1.75; }
+        .profile-achievement-list li::before { content:'✓'; position:absolute; left:.95rem; top:.9rem; display:grid; place-items:center; width:20px; height:20px; border-radius:50%; background:#f2e3bf; color:#6c171f; font-weight:900; }
+        .profile-contribution { display:grid; grid-template-columns:48px minmax(0,1fr); gap:1rem; padding:1.15rem; border-radius:18px; border:1px solid rgba(173,137,66,.35); background:linear-gradient(120deg,#fff9eb,#f6ecda); }
+        .profile-contribution-icon { width:46px; height:46px; display:grid; place-items:center; border-radius:14px; background:#65151d; color:#f3d98c; font-size:1.15rem; }
+        .profile-card-kicker { color:#a17b37; font-size:.6rem; letter-spacing:.16em; font-weight:900; }
+        .profile-contribution h4 { color:#64151d; font-family:'Merriweather',serif; font-size:.95rem; font-weight:900; margin:.2rem 0 .45rem; }
+        .profile-contribution p:last-child { color:#5b5047; font-size:.78rem; line-height:1.8; }
+        .profile-story-card { position:relative; padding:1.2rem 1.3rem 1.2rem 3.4rem; border-radius:18px; background:#5b1017; color:#fff4df; box-shadow:0 14px 30px rgba(91,16,23,.14); }
+        .profile-story-card > i { position:absolute; left:1.25rem; top:1.25rem; color:#e8c875; font-size:1.2rem; }
+        .profile-story-card p { font-size:.8rem; line-height:1.9; }
+        .profile-facts-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; margin-top:1rem; }
+        .profile-fact { display:grid; grid-template-columns:40px minmax(0,1fr); gap:.75rem; align-items:start; padding:.85rem; border:1px solid #eee3cf; border-radius:14px; background:#fff; }
+        .profile-fact-no { color:#ab873e; font-family:'Merriweather',serif; font-size:.85rem; font-weight:900; }
+        .profile-fact p { color:#60544a; font-size:.74rem; line-height:1.7; }
+        .profile-quote { display:flex; align-items:flex-start; gap:.85rem; margin-top:1rem; padding:1rem 1.15rem; border-left:4px solid #c5a052; border-radius:0 14px 14px 0; background:#faf3e4; }
+        .profile-quote i { color:#ac873c; padding-top:.15rem; }
+        .profile-quote p { color:#6b1b22; font-family:'Merriweather',serif; font-size:.82rem; font-weight:700; line-height:1.8; }
+        .profile-gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; }
+        .profile-photo-card { display:block; min-width:0; overflow:hidden; text-align:left; border:1px solid #e9dec9; border-radius:15px; background:#fff; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+        .profile-photo-card:hover { transform:translateY(-4px); border-color:#c5a052; box-shadow:0 14px 25px rgba(55,31,20,.12); }
+        .profile-photo { display:block; aspect-ratio:4/3; overflow:hidden; background:#f0e8db; }
+        .profile-photo img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+        .profile-photo-card:hover img { transform:scale(1.05); }
+        .profile-photo-caption { display:block; padding:.75rem .75rem .25rem; color:#64151d; font-size:.72rem; line-height:1.5; font-weight:900; }
+        .profile-photo-credit { display:block; padding:0 .75rem .75rem; color:#8c7965; font-size:.62rem; line-height:1.6; }
+        .profile-photo-credit a { color:#8d692d; text-decoration:underline; text-underline-offset:2px; }
+        .profile-sources-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; }
+        .profile-source-link { display:flex; align-items:center; gap:.75rem; padding:.85rem; border:1px solid #e9dec9; border-radius:14px; background:#fff; transition:background .2s ease,border-color .2s ease,transform .2s ease; }
+        .profile-source-link:hover { background:#fff9eb; border-color:#c5a052; transform:translateY(-2px); }
+        .profile-source-icon { width:36px; height:36px; flex:0 0 36px; display:grid; place-items:center; border-radius:11px; background:#f5ebd5; color:#6a1920; }
+        .profile-source-link small { display:block; color:#9a783c; font-size:.58rem; font-weight:900; text-transform:uppercase; letter-spacing:.09em; }
+        .profile-source-link strong { display:block; color:#57473b; margin-top:.18rem; font-size:.69rem; line-height:1.55; }
+        .profile-bottom-credit { padding:1rem; border-radius:14px; background:#f8f3e7; color:#806844; text-align:center; font-size:.69rem; font-weight:800; }
+        .broken-image { display:none !important; }
+        .timeline-expanded-visual { display:grid; grid-template-columns:100px minmax(0,1fr); gap:.9rem; align-items:center; margin-bottom:1rem; padding:.7rem; border-radius:15px; background:#faf5e9; }
+        .timeline-expanded-visual img { width:100px; height:82px; object-fit:cover; border-radius:10px; }
+        .timeline-expanded-visual-text { grid-template-columns:58px minmax(0,1fr); }
+        .timeline-expanded-icon { display:grid; place-items:center; width:50px; height:50px; border-radius:14px; color:#f6dfa0; background:linear-gradient(145deg,#7b2024,#4b0c12); font-size:1.25rem; }
+        .timeline-expanded-label { color:#9d7937; font-size:.58rem; font-weight:900; letter-spacing:.15em; }
+        .timeline-expanded-visual h5 { margin-top:.22rem; color:#681720; font-family:'Merriweather',serif; font-size:.85rem; font-weight:900; line-height:1.4; }
+        .timeline-expanded-visual p { margin-top:.25rem; color:#89745c; font-size:.65rem; font-weight:700; }
+        .timeline-info-block { margin-top:.75rem; padding:.85rem .95rem; border-radius:13px; border:1px solid #eee4d2; background:#fff; }
+        .timeline-info-block > p:last-child { color:#62564c; font-size:.74rem; line-height:1.8; }
+        .timeline-info-title { display:flex; align-items:center; gap:.5rem; color:#721d25; font-size:.67rem; font-weight:900; margin-bottom:.4rem; }
+        .timeline-info-title i { color:#b48b3d; }
+        .timeline-fun-fact { background:linear-gradient(120deg,#fff9e9,#f8efd9); border-color:#ead9b4; }
+        .timeline-source-row { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .8rem; margin-top:.85rem; color:#8a6b37; font-size:.63rem; font-weight:900; }
+        .timeline-source-row a { color:#6d1a22; text-decoration:underline; text-underline-offset:2px; font-weight:700; }
+        @media (max-width: 768px) {
+            .profile-hero { grid-template-columns:1fr; }
+            .profile-hero-image, .profile-hero-image img { min-height:260px; max-height:320px; }
+            .profile-stats { grid-template-columns:1fr; }
+            .profile-achievement-list, .profile-gallery-grid, .profile-sources-grid, .profile-facts-grid { grid-template-columns:1fr; }
+            .profile-jumpbar > span { width:100%; }
+            .profile-section { scroll-margin-top:160px; }
+            .timeline-expanded-visual { grid-template-columns:82px minmax(0,1fr); }
+            .timeline-expanded-visual img { width:82px; height:72px; }
+        }
+
+    
+        @media (max-width: 768px) {
+            header nav { flex-wrap: nowrap !important; justify-content: flex-start !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; scrollbar-width: none; }
+            header nav::-webkit-scrollbar { display: none; }
+            header nav .nav-link { flex: 0 0 auto; }
+        }
+
+
+        /* ===== Team, attribution, source catalogue and image viewer refinement ===== */
+        #tab-about .about-shell { width:100%; }
+        .about-hero { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(250px,.8fr); gap:1.5rem; align-items:stretch; overflow:hidden; padding:clamp(1.35rem,3vw,2.4rem); border:1px solid rgba(215,185,109,.55); border-radius:26px; color:#fff5df; background:radial-gradient(circle at 86% 18%,rgba(230,196,116,.22),transparent 18rem),linear-gradient(120deg,#31090d,#5b1017 58%,#74232a); box-shadow:0 20px 48px rgba(55,18,18,.14); }
+        .about-kicker { display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .75rem; border:1px solid rgba(238,215,157,.38); border-radius:999px; color:#f3db9c; background:rgba(255,255,255,.07); font-size:.63rem; font-weight:900; letter-spacing:.12em; }
+        .about-hero-copy h2 { margin-top:1rem; color:#f2d88d; font-family:'Merriweather',serif; font-size:clamp(1.45rem,3vw,2.35rem); line-height:1.25; font-weight:900; }
+        .about-hero-copy > p { margin-top:.75rem; color:rgba(255,246,225,.88); font-size:.9rem; line-height:1.8; max-width:64ch; }
+        .about-school-line { display:inline-flex; align-items:center; gap:.5rem; margin-top:1.05rem; color:#f4dda1; font-size:.74rem; font-weight:800; }
+        .about-hero-stats { display:grid; grid-template-columns:1fr; align-content:center; gap:.65rem; }
+        .about-hero-stats > div { display:flex; align-items:center; gap:.9rem; padding:.78rem 1rem; border:1px solid rgba(245,224,173,.2); border-radius:15px; background:rgba(255,255,255,.07); }
+        .about-hero-stats strong { min-width:2.4rem; color:#f4d88b; font-family:'Merriweather',serif; font-size:1.45rem; }
+        .about-hero-stats span { color:#fff4df; font-size:.72rem; font-weight:700; }
+        .about-purpose-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:1rem; }
+        .about-panel { min-width:0; padding:clamp(1rem,2vw,1.45rem); border:1px solid rgba(173,137,66,.28); border-radius:20px; background:rgba(255,255,255,.94); box-shadow:0 10px 28px rgba(55,31,20,.055); }
+        .about-heading { display:flex; align-items:center; gap:.8rem; margin-bottom:.9rem; }
+        .about-heading > span { display:grid; place-items:center; flex:0 0 38px; width:38px; height:38px; border-radius:12px; color:#fff0c8; background:linear-gradient(145deg,#7b2024,#4b0c12); font-family:'Merriweather',serif; font-size:.8rem; font-weight:900; }
+        .about-heading small { display:block; color:#9c793c; font-size:.58rem; font-weight:900; letter-spacing:.13em; }
+        .about-heading h3 { margin-top:.14rem; color:#60151c; font-family:'Merriweather',serif; font-size:1rem; font-weight:900; }
+        .about-panel > p:not(.about-section-note) { color:#5d5148; font-size:.78rem; line-height:1.85; }
+        .about-purpose-main > p + p { margin-top:.6rem; }
+        .about-value-list { display:grid; gap:.7rem; }
+        .about-value-list li { display:flex; align-items:flex-start; gap:.7rem; }
+        .about-value-list li > i { display:grid; place-items:center; flex:0 0 32px; width:32px; height:32px; border-radius:10px; color:#771e26; background:#f7edd9; font-size:.8rem; }
+        .about-value-list strong,.about-value-list small { display:block; }
+        .about-value-list strong { color:#5d1b22; font-size:.73rem; font-weight:900; }
+        .about-value-list small { margin-top:.12rem; color:#706257; font-size:.68rem; line-height:1.55; }
+        .about-section-note { margin:-.3rem 0 1rem; color:#776b5e; font-size:.73rem; line-height:1.7; }
+        .team-panel { padding-bottom:1.25rem; }
+        .team-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.7rem; }
+        .team-member { display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:0; padding:1rem .55rem .9rem; text-align:center; border:1px solid #eee2cb; border-radius:16px; background:linear-gradient(150deg,#fff,#fbf7ed); transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+        .team-member:hover { transform:translateY(-3px); border-color:#c5a052; box-shadow:0 10px 22px rgba(55,31,20,.08); }
+        .team-avatar { display:grid; place-items:center; width:46px; height:46px; margin-bottom:.55rem; border-radius:50%; border:2px solid #d7bd7a; color:#fff1c9; background:linear-gradient(145deg,#741d25,#3c0c12); font-family:'Merriweather',serif; font-size:.78rem; font-weight:900; }
+        .team-member strong { color:#60151c; font-size:.77rem; font-weight:900; }
+        .team-member small { margin-top:.18rem; color:#907a5b; font-size:.6rem; }
+        .teacher-panel { display:grid; grid-template-columns:58px minmax(0,1fr) auto; gap:1rem; align-items:center; padding:1.2rem 1.4rem; border:1px solid rgba(215,185,109,.52); border-radius:20px; background:linear-gradient(110deg,#fffaf0,#f4e8cf); box-shadow:0 10px 26px rgba(55,31,20,.055); }
+        .teacher-emblem { display:grid; place-items:center; width:54px; height:54px; border-radius:16px; color:#f6dfa0; background:#5b1017; font-size:1.3rem; }
+        .teacher-copy > small { color:#997337; font-size:.59rem; font-weight:900; letter-spacing:.13em; }
+        .teacher-copy h3 { margin-top:.18rem; color:#60151c; font-family:'Merriweather',serif; font-size:1.1rem; font-weight:900; }
+        .teacher-copy p { margin-top:.3rem; color:#63564a; font-size:.72rem; line-height:1.7; }
+        .teacher-thanks { display:flex; flex-direction:column; align-items:center; gap:.3rem; color:#8b6a34; font-size:.64rem; font-weight:900; white-space:nowrap; }
+        .teacher-thanks i { font-size:1rem; color:#a13a3c; }
+        .source-catalog { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; }
+        .source-group { display:flex; flex-direction:column; gap:.48rem; min-width:0; padding:1rem; border:1px solid #eee3cf; border-radius:15px; background:#fff; }
+        .source-group h4 { display:flex; align-items:center; gap:.5rem; margin-bottom:.12rem; color:#651820; font-size:.74rem; font-weight:900; }
+        .source-group h4 i { color:#ad8942; }
+        .source-group a { color:#6d6256; font-size:.68rem; line-height:1.55; text-decoration:underline; text-decoration-color:#d7c8a7; text-underline-offset:3px; overflow-wrap:anywhere; }
+        .source-group a:hover { color:#8d1c28; text-decoration-color:#8d1c28; }
+        .source-note { display:flex; gap:.7rem; margin-top:.9rem; padding:.85rem 1rem; border-radius:13px; color:#695944; background:#f8f2e5; }
+        .source-note i { flex:0 0 auto; margin-top:.15rem; color:#987435; }
+        .source-note p { font-size:.67rem; line-height:1.75; }
+        .source-note strong { color:#651820; }
+        .gallery-card { min-width:0; transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease; }
+        .gallery-card:hover { transform:translateY(-4px); border-color:#c5a052 !important; box-shadow:0 18px 36px rgba(55,31,20,.12); }
+        .gallery-open { display:block; }
+        .gallery-open:focus-visible { outline:3px solid #c5a052; outline-offset:-3px; }
+        .gallery-image-wrap { position:relative; }
+        .gallery-image-wrap img { transition:transform .55s ease; }
+        .gallery-card:hover .gallery-image-wrap img { transform:scale(1.045); }
+        .gallery-credit { display:inline-block; color:#8a6a2d; font-size:.65rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
+        .gallery-credit:hover { color:#7b2024; }
+        .image-fallback-active { object-fit:cover; }
+        .lightbox-open { overflow:hidden; }
+        .lightbox-overlay { position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:clamp(.65rem,3vw,2rem); background:rgba(11,10,9,.88); backdrop-filter:blur(8px); }
+        .lightbox-overlay[hidden] { display:none !important; }
+        .lightbox-panel { position:relative; display:flex; flex-direction:column; width:min(100%,1000px); max-height:94vh; overflow:hidden; border:1px solid rgba(238,215,157,.45); border-radius:20px; background:#171412; box-shadow:0 28px 80px rgba(0,0,0,.45); animation:lightboxIn .22s ease both; }
+        @keyframes lightboxIn { from { opacity:0; transform:translateY(10px) scale(.99); } to { opacity:1; transform:translateY(0) scale(1); } }
+        .lightbox-close { position:absolute; top:.8rem; right:.8rem; z-index:3; display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(255,255,255,.3); border-radius:50%; color:white; background:rgba(20,16,14,.72); font-size:1.1rem; backdrop-filter:blur(8px); }
+        .lightbox-close:hover { background:#8c1d28; transform:rotate(4deg); }
+        .lightbox-image-stage { display:flex; align-items:center; justify-content:center; min-height:200px; height:min(68vh,720px); padding:1.1rem; background:linear-gradient(145deg,#161311,#29221d); }
+        .lightbox-image-stage img { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
+        .lightbox-meta { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.2rem; color:#f7efdf; background:#fffdf8; }
+        .lightbox-meta h4 { color:#7b2024; font-family:'Merriweather',serif; font-size:.92rem; font-weight:900; }
+        .lightbox-meta p { margin-top:.3rem; color:#74685c; font-size:.68rem; line-height:1.6; }
+        .lightbox-meta a { display:inline-flex; align-items:center; gap:.4rem; flex:0 0 auto; color:#7b2024; font-size:.65rem; font-weight:900; text-decoration:underline; text-underline-offset:3px; }
+        @media (max-width: 900px) {
+            .team-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+            .about-hero { grid-template-columns:1fr; }
+            .about-hero-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+            .about-hero-stats > div { flex-direction:column; align-items:flex-start; gap:.15rem; }
+        }
+        @media (max-width: 640px) {
+            .about-purpose-grid,.source-catalog { grid-template-columns:1fr; }
+            .team-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+            .teacher-panel { grid-template-columns:48px minmax(0,1fr); }
+            .teacher-emblem { width:46px; height:46px; }
+            .teacher-thanks { grid-column:2; flex-direction:row; justify-content:flex-start; }
+            .lightbox-meta { align-items:flex-start; flex-direction:column; }
+            .lightbox-image-stage { height:min(62vh,560px); }
+        }
+
+    </style>
+    <meta name="author" content="Tập thể lớp 12A9 – Trường THPT Kế Sách">
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-crimson selection:text-gold">
+    <div id="reading-progress" role="presentation" aria-hidden="true"></div>
+
+    <!-- HEADER & FIXED NAVBAR -->
+    <header class="sticky top-0 z-50 bg-crimson-950 border-b-2 border-gold/70 text-parchment shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+            
+            <!-- Logo / Brand Title featuring Vietnam National Flag Emblem -->
+            <a href="#home" onclick="switchTab('home')" class="flex items-center space-x-3 group cursor-pointer">
+                <!-- Vietnam Flag Shield Logo -->
+                <div class="w-11 h-11 rounded-full bg-crimson border-2 border-gold flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform relative overflow-hidden">
+                    <i class="fa-solid fa-star text-gold-400 text-2xl drop-shadow-[0_0_4px_rgba(255,215,0,0.8)]"></i>
+                </div>
+                <div>
+                    <h1 class="font-heading font-black text-base sm:text-lg lg:text-xl text-gold-400 leading-none tracking-wide group-hover:text-gold-300 transition-colors flex items-center gap-2">
+                        <span>DẤU ẤN ANH HÙNG DÂN TỘC</span>
+                    </h1>
+                    <p class="text-[10px] sm:text-xs text-gold-300 uppercase tracking-widest font-bold mt-1">HÀO KHÍ VIỆT NAM • LỚP 12A9 – THPT KẾ SÁCH</p>
+                </div>
+            </a>
+
+            <!-- Full Navigation Bar (Always Visible) -->
+            <nav class="flex flex-wrap items-center justify-center gap-1.5 bg-mahogany-dark/80 p-1.5 rounded-2xl border border-gold/40 shadow-inner">
+                <a href="#home" onclick="switchTab('home')" id="nav-home" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-house text-gold-400"></i>
+                    <span>Trang Chủ</span>
+                </a>
+                <a href="#characters" onclick="switchTab('characters')" id="nav-characters" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-user-shield text-gold-400"></i>
+                    <span>Nhân Vật</span>
+                </a>
+                <a href="#timeline" onclick="switchTab('timeline')" id="nav-timeline" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-timeline text-gold-400"></i>
+                    <span>Dòng Thời Gian</span>
+                </a>
+                <a href="#gallery" onclick="switchTab('gallery')" id="nav-gallery" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-images text-gold-400"></i>
+                    <span>Thư Viện Ảnh</span>
+                </a>
+                <a href="#quiz" onclick="switchTab('quiz')" id="nav-quiz" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-graduation-cap text-gold-400"></i>
+                    <span>Trắc Nghiệm</span>
+                </a>
+                <a href="#about" onclick="switchTab('about')" id="nav-about" class="nav-link px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-parchment/90 hover:text-gold-400 hover:bg-crimson-800/60 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-circle-info text-gold-400"></i>
+                    <span>Giới Thiệu</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN SPA CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- 1. TRANG CHỦ (HOME) -->
+        <section id="tab-home" class="spa-tab-content space-y-12">
+            
+            <!-- Hero Banner -->
+            <div class="hero-banner relative rounded-3xl overflow-hidden bg-crimson-950 border-2 border-gold/60 text-parchment p-8 lg:p-12 shadow-2xl">
+                <div class="absolute inset-0" aria-hidden="true"></div>
+                
+                <div class="relative z-10 max-w-3xl space-y-6">
+                    <div class="hero-kicker">
+                        <i class="fa-solid fa-scroll"></i>
+                        <span>Cổng Thông Tin Lịch Sử Việt Nam</span>
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-gold-400 leading-tight">
+                        HÀO KHÍ VIỆT NAM<br>
+                        <span class="text-parchment text-2xl sm:text-3xl font-bold">DẤU ẤN NGÀN NĂM</span>
+                    </h2>
+                    <p class="text-parchment/90 text-sm sm:text-base leading-relaxed">
+                        Lịch sử Việt Nam là hành trình hàng nghìn năm dựng nước và giữ nước, được viết nên bởi lòng yêu nước, ý chí kiên cường và tinh thần đoàn kết của dân tộc. Hãy cùng khám phá cuộc đời, sự nghiệp và những dấu mốc vĩ đại gắn liền với các vị anh hùng dân tộc.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="switchTab('characters')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-gold to-gold-dark text-mahogany-dark font-extrabold text-sm hover:brightness-110 transition-all shadow-lg flex items-center space-x-2">
+                            <span>Khám Phá Nhân Vật</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('quiz')" class="px-6 py-3 rounded-xl bg-crimson-900 border border-gold/50 text-gold-300 font-bold text-sm hover:bg-crimson-800 transition-all shadow-lg flex items-center space-x-2">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>Thử Thách Kiến Thức</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Hero Grid -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-gold/30 pb-3">
+                    <h3 class="font-heading text-xl sm:text-2xl font-bold text-crimson-900 flex items-center gap-2">
+                        <i class="fa-solid fa-crown text-gold"></i>
+                        <span>5 Nhân Vật Lịch Sử Tiêu Biểu</span>
+                    </h3>
+                    <button onclick="switchTab('characters')" class="text-xs font-bold text-crimson hover:text-crimson-dark flex items-center gap-1">
+                        <span>Xem tất cả</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Hai Bà Trưng Card -->
+                    <div onclick="selectCharacterAndSwitch('hai-ba-trung')" class="group cursor-pointer bg-white rounded-2xl border border-gold/40 hover:border-gold p-5 transition-all hover:-translate-y-1 shadow-md hover:shadow-xl flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-parchment-dark">
+                                <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hai_ba_trung_Dong_Ho_painting.jpg/960px-Hai_ba_trung_Dong_Ho_painting.jpg" alt="Hai Bà Trưng – tranh dân gian minh họa" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-crimson text-gold-300 text-xs font-bold">Thế kỷ I (Năm 40)</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-crimson group-hover:text-crimson-light transition-colors">Hai Bà Trưng</h4>
+                                <p class="text-xs text-gold-darker font-semibold">Trưng Trắc & Trưng Nhị</p>
+                                <p class="text-xs text-mahogany/80 mt-2 line-clamp-3">
+                                    Lãnh đạo cuộc khởi nghĩa năm 40 chống ách đô hộ nhà Đông Hán, giành lại tự do độc lập đầu tiên cho dân tộc.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-parchment-deep flex items-center justify-between text-xs font-bold text-crimson">
+                            <span>Chi tiết tiểu sử</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Lý Thường Kiệt Card -->
+                    <div onclick="selectCharacterAndSwitch('ly-thuong-kiet')" class="group cursor-pointer bg-white rounded-2xl border border-gold/40 hover:border-gold p-5 transition-all hover:-translate-y-1 shadow-md hover:shadow-xl flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-parchment-dark">
+                                <img loading="lazy" decoding="async" src="https://nhn.1cdn.vn/2023/10/24/tuong-dai-ly-thuong-kiet.jpg" alt="Tượng Lý Thường Kiệt" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-crimson text-gold-300 text-xs font-bold">1019 – 1105</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-crimson group-hover:text-crimson-light transition-colors">Lý Thường Kiệt</h4>
+                                <p class="text-xs text-gold-darker font-semibold">Thái úy Quốc Công nhà Lý</p>
+                                <p class="text-xs text-mahogany/80 mt-2 line-clamp-3">
+                                    Danh tướng kiệt xuất kháng chiến chống quân Tống, tác giả bản tuyên ngôn độc lập đầu tiên "Nam Quốc Sơn Hà".
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-parchment-deep flex items-center justify-between text-xs font-bold text-crimson">
+                            <span>Chi tiết tiểu sử</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Trần Hưng Đạo Card -->
+                    <div onclick="selectCharacterAndSwitch('tran-hung-dao')" class="group cursor-pointer bg-white rounded-2xl border border-gold/40 hover:border-gold p-5 transition-all hover:-translate-y-1 shadow-md hover:shadow-xl flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-parchment-dark">
+                                <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Statue_of_Tran_Hung_Dao_at_Me_Linh_Square.jpg/960px-Statue_of_Tran_Hung_Dao_at_Me_Linh_Square.jpg" alt="Tượng Trần Hưng Đạo" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-crimson text-gold-300 text-xs font-bold">1228 – 1300</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-crimson group-hover:text-crimson-light transition-colors">Trần Hưng Đạo</h4>
+                                <p class="text-xs text-gold-darker font-semibold">Trần Quốc Tuấn – Quốc Công Tiết Chế</p>
+                                <p class="text-xs text-mahogany/80 mt-2 line-clamp-3">
+                                    Vị tướng kiệt xuất chỉ huy 3 lần đại phá quân Nguyên Mông, ghi dấu ấn lừng lẫy với đại thắng sông Bạch Đằng 1288.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-parchment-deep flex items-center justify-between text-xs font-bold text-crimson">
+                            <span>Chi tiết tiểu sử</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Quang Trung Card -->
+                    <div onclick="selectCharacterAndSwitch('quang-trung')" class="group cursor-pointer bg-white rounded-2xl border border-gold/40 hover:border-gold p-5 transition-all hover:-translate-y-1 shadow-md hover:shadow-xl flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-parchment-dark">
+                                <img loading="lazy" decoding="async" src="https://commons.wikimedia.org/wiki/Special:FilePath/T%C6%B0%E1%BB%A3ng_Quang_Trung_-_Nguy%E1%BB%85n_Hu%E1%BB%87_t%E1%BA%A1i_di_t%C3%ADch_An_Kh%C3%AA_%C4%90%C3%ACnh.jpg?width=1200" alt="Tượng Quang Trung" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-crimson text-gold-300 text-xs font-bold">1753 – 1792</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-crimson group-hover:text-crimson-light transition-colors">Quang Trung – Nguyễn Huệ</h4>
+                                <p class="text-xs text-gold-darker font-semibold">Hoàng đế áo vải thiên tài quân sự</p>
+                                <p class="text-xs text-mahogany/80 mt-2 line-clamp-3">
+                                    Lãnh tụ phong trào Tây Sơn, chỉ huy chiến dịch thần tốc đại phá 29 vạn quân Thanh mùa xuân Kỷ Dậu 1789.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-parchment-deep flex items-center justify-between text-xs font-bold text-crimson">
+                            <span>Chi tiết tiểu sử</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Hồ Chí Minh Card -->
+                    <div onclick="selectCharacterAndSwitch('ho-chi-minh')" class="group cursor-pointer bg-white rounded-2xl border border-gold/40 hover:border-gold p-5 transition-all hover:-translate-y-1 shadow-md hover:shadow-xl flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-parchment-dark">
+                                <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg/960px-Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg" alt="Chân dung Chủ tịch Hồ Chí Minh" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-crimson text-gold-300 text-xs font-bold">1890 – 1969</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-crimson group-hover:text-crimson-light transition-colors">Chủ tịch Hồ Chí Minh</h4>
+                                <p class="text-xs text-gold-darker font-semibold">Vị lãnh tụ vĩ đại của dân tộc</p>
+                                <p class="text-xs text-mahogany/80 mt-2 line-clamp-3">
+                                    Người tìm đường cứu nước, đọc Bản Tuyên ngôn Độc lập ngày 2/9/1945 khai sinh ra nước Việt Nam Dân chủ Cộng hòa.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-parchment-deep flex items-center justify-between text-xs font-bold text-crimson">
+                            <span>Chi tiết tiểu sử</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 2. TRANG NHÂN VẬT (CHARACTERS) -->
+        <section id="tab-characters" class="spa-tab-content space-y-8">
+            <!-- Tabs Switcher for Characters -->
+            <div class="flex flex-wrap items-center justify-center gap-2 p-2 bg-parchment-dark rounded-2xl border border-gold/40 shadow-inner">
+                <button onclick="renderCharacterProfile('hai-ba-trung')" id="char-btn-hai-ba-trung" class="char-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-mahogany hover:bg-white">Hai Bà Trưng</button>
+                <button onclick="renderCharacterProfile('ly-thuong-kiet')" id="char-btn-ly-thuong-kiet" class="char-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-mahogany hover:bg-white">Lý Thường Kiệt</button>
+                <button onclick="renderCharacterProfile('tran-hung-dao')" id="char-btn-tran-hung-dao" class="char-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-mahogany hover:bg-white">Trần Hưng Đạo</button>
+                <button onclick="renderCharacterProfile('quang-trung')" id="char-btn-quang-trung" class="char-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-mahogany hover:bg-white">Quang Trung</button>
+                <button onclick="renderCharacterProfile('ho-chi-minh')" id="char-btn-ho-chi-minh" class="char-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-mahogany hover:bg-white">Hồ Chí Minh</button>
+            </div>
+
+            <!-- Profile Content Area -->
+            <div id="character-detail-container" class="bg-white rounded-3xl p-6 lg:p-10 border border-gold/40 shadow-xl space-y-8">
+                <!-- Dynamically Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- 3. TRANG DÒNG THỜI GIAN (TIMELINE) -->
+        <section id="tab-timeline" class="spa-tab-content space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="font-heading font-black text-2xl sm:text-3xl text-crimson">DÒNG THỜI GIAN LỊCH SỬ</h2>
+                <p class="text-xs sm:text-sm text-mahogany/80">
+                    Khám phá 15 dấu mốc từ thế kỷ I đến năm 1969, gắn với năm nhân vật và những bước ngoặt của lịch sử Việt Nam.
+                </p>
+            </div>
+
+            <div class="timeline-tools max-w-5xl mx-auto space-y-5">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[.18em] font-extrabold text-gold-darker">Khám phá theo thời gian</p>
+                        <p id="timeline-count" class="font-heading text-sm sm:text-base font-bold text-crimson mt-1" aria-live="polite">15 dấu mốc lịch sử</p>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-mahogany/70"><i class="fa-solid fa-hand-pointer text-gold-darker"></i> Chọn “Xem chi tiết” để tìm hiểu từng sự kiện</span>
+                </div>
+                <div class="timeline-progress-track" role="progressbar" aria-label="Tiến độ khám phá dòng thời gian" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="timeline-progress-fill" class="timeline-progress-fill"></div>
+                </div>
+                <div class="flex flex-wrap gap-2" role="group" aria-label="Lọc giai đoạn lịch sử">
+                    <button type="button" class="timeline-filter active" data-timeline-filter="all" aria-pressed="true"><i class="fa-solid fa-layer-group"></i> Tất cả</button>
+                    <button type="button" class="timeline-filter" data-timeline-filter="ancient" aria-pressed="false">Cổ đại</button>
+                    <button type="button" class="timeline-filter" data-timeline-filter="medieval" aria-pressed="false">Trung đại</button>
+                    <button type="button" class="timeline-filter" data-timeline-filter="earlymodern" aria-pressed="false">Cận đại</button>
+                    <button type="button" class="timeline-filter" data-timeline-filter="modern" aria-pressed="false">Hiện đại</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_auto] gap-3">
+                    <label class="relative block">
+                        <span class="sr-only">Tìm kiếm sự kiện</span>
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gold-darker text-sm"></i>
+                        <input id="timeline-search" class="timeline-field pl-10" type="search" placeholder="Tìm theo năm, nhân vật hoặc sự kiện…" autocomplete="off">
+                    </label>
+                    <label>
+                        <span class="sr-only">Chọn mốc cần đến</span>
+                        <select id="timeline-jump" class="timeline-field">
+                            <option value="">Đi nhanh đến một dấu mốc…</option>
+                        </select>
+                    </label>
+                    <button id="timeline-jump-btn" type="button" class="rounded-xl px-5 py-3 bg-crimson text-gold-100 font-extrabold text-xs hover:bg-crimson-800 shadow-md"><i class="fa-solid fa-location-arrow mr-2"></i>Đi đến</button>
+                </div>
+            </div>
+
+            <div id="timeline-events-container" class="relative timeline-line max-w-4xl mx-auto py-6 space-y-8" aria-live="polite">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="max-w-4xl mx-auto -mt-3 flex justify-center">
+                <button type="button" onclick="resetTimelineFilters()" class="text-xs font-bold text-crimson hover:text-gold-darker underline underline-offset-4"><i class="fa-solid fa-rotate-left mr-1"></i>Đặt lại bộ lọc và tìm kiếm</button>
+            </div>
+        </section>
+
+        <!-- 4. TRANG THƯ VIỆN ĐA PHƯƠNG TIỆN (GALLERY) -->
+        <section id="tab-gallery" class="spa-tab-content space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="font-heading font-black text-2xl sm:text-3xl text-crimson">THƯ VIỆN HÌNH CỔ TƯ LIỆU</h2>
+                <p class="text-xs sm:text-sm text-mahogany/80">Bộ sưu tập tranh minh họa, hiện vật, di tích và tư liệu ảnh; mỗi hình có chú thích và đường dẫn nguồn riêng.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="gallery-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- 5. TRANG TRẮC NGHIỆM (QUIZ) -->
+        <section id="tab-quiz" class="spa-tab-content space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="font-heading font-black text-2xl sm:text-3xl text-crimson">THỬ THÁCH KIẾN THỨC LỊCH SỬ</h2>
+                <p class="text-xs sm:text-sm text-mahogany/80">Cùng tự kiểm tra và củng cố kiến thức về các vị anh hùng qua 5 câu hỏi trắc nghiệm.</p>
+            </div>
+
+            <div id="quiz-container" class="max-w-2xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-gold/40 shadow-xl space-y-6">
+                <!-- Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- 6. GIỚI THIỆU DỰ ÁN, ĐỘI NGŨ VÀ NGUỒN TƯ LIỆU -->
+        <section id="tab-about" class="spa-tab-content space-y-7">
+            <div class="about-shell max-w-7xl mx-auto space-y-6">
+                <header class="about-hero">
+                    <div class="about-hero-copy">
+                        <span class="about-kicker"><i class="fa-solid fa-book-open"></i> DỰ ÁN HỌC TẬP LỊCH SỬ</span>
+                        <h2 class="font-heading">DẤU ẤN ANH HÙNG DÂN TỘC</h2>
+                        <p>“Hiểu lịch sử để trân trọng hiện tại, nuôi dưỡng trách nhiệm với tương lai.”</p>
+                        <div class="about-school-line"><i class="fa-solid fa-school"></i> Tập thể lớp 12A9 · Trường THPT Kế Sách</div>
+                    </div>
+                    <div class="about-hero-stats" aria-label="Tổng quan dự án">
+                        <div><strong>05</strong><span>Nhân vật lịch sử</span></div>
+                        <div><strong>15</strong><span>Dấu mốc tiêu biểu</span></div>
+                        <div><strong>01</strong><span>Không gian khám phá</span></div>
+                    </div>
+                </header>
+
+                <div class="about-purpose-grid">
+                    <article class="about-panel about-purpose-main">
+                        <div class="about-heading"><span>01</span><div><small>LÝ DO THỰC HIỆN</small><h3>Mục tiêu của dự án</h3></div></div>
+                        <p>“Dấu Ấn Anh Hùng Dân Tộc” được xây dựng với mong muốn đưa lịch sử Việt Nam đến gần học sinh bằng một cách tiếp cận trực quan, dễ khám phá và có thể tương tác. Thay vì chỉ ghi nhớ ngày tháng, người xem được tìm hiểu con người phía sau mỗi dấu mốc: họ xuất thân trong hoàn cảnh nào, đã lựa chọn và hành động ra sao, để lại thành tựu gì và những đóng góp ấy có ý nghĩa như thế nào đối với các thế hệ hôm nay.</p>
+                        <p>Dự án cũng là dịp để học sinh rèn luyện kỹ năng tìm kiếm, chọn lọc, đối chiếu tư liệu, trình bày thông tin và ứng dụng công nghệ vào học tập. Nhóm mong muốn khơi gợi sự tò mò, tinh thần tự học và niềm trân trọng đối với những di sản lịch sử – văn hóa của dân tộc.</p>
+                    </article>
+                    <article class="about-panel">
+                        <div class="about-heading"><span>02</span><div><small>GIÁ TRỊ HỌC TẬP</small><h3>Điều nhóm mong muốn lan tỏa</h3></div></div>
+                        <ul class="about-value-list">
+                            <li><i class="fa-solid fa-compass"></i><span><strong>Hiểu đúng bối cảnh</strong><small>Đặt nhân vật và sự kiện trong hoàn cảnh lịch sử cụ thể.</small></span></li>
+                            <li><i class="fa-solid fa-book-open-reader"></i><span><strong>Học bằng khám phá</strong><small>Kết hợp hồ sơ, hình ảnh, dòng thời gian và câu hỏi tương tác.</small></span></li>
+                            <li><i class="fa-solid fa-scale-balanced"></i><span><strong>Tôn trọng tư liệu</strong><small>Phân biệt dữ kiện, cách diễn giải và tranh minh họa hiện đại.</small></span></li>
+                            <li><i class="fa-solid fa-heart"></i><span><strong>Kết nối với hiện tại</strong><small>Gợi suy nghĩ về lòng yêu nước, đoàn kết và trách nhiệm công dân.</small></span></li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="about-purpose-grid">
+                    <article class="about-panel">
+                        <div class="about-heading"><span>03</span><div><small>ĐỐI TƯỢNG & PHẠM VI</small><h3>Website dành cho ai?</h3></div></div>
+                        <p>Website hướng tới học sinh, giáo viên và người quan tâm đến lịch sử Việt Nam. Nội dung tập trung vào năm nhân vật tiêu biểu cùng các sự kiện liên quan, từ thời kỳ đầu Công nguyên đến lịch sử hiện đại. Các thông tin được trình bày dưới dạng tóm lược phục vụ học tập; người đọc có thể mở nguồn tham khảo để tìm hiểu sâu hơn.</p>
+                    </article>
+                    <article class="about-panel">
+                        <div class="about-heading"><span>04</span><div><small>CÁCH NHÓM BIÊN SOẠN</small><h3>Nguyên tắc xây dựng nội dung</h3></div></div>
+                        <p>Nhóm tham khảo sách học tập, tư liệu của bảo tàng, cơ quan lưu trữ và các nguồn giáo dục đáng tin cậy; sau đó chọn lọc, diễn giải bằng ngôn ngữ ngắn gọn. Hình ảnh được ghi nguồn riêng. Với chi tiết còn có dị bản hoặc chưa thể khẳng định tuyệt đối, website sẽ nêu chú thích thận trọng thay vì trình bày như một kết luận chắc chắn.</p>
+                    </article>
+                </div>
+
+                <section class="about-panel team-panel" aria-labelledby="team-title">
+                    <div class="about-heading"><span>05</span><div><small>NHỮNG NGƯỜI THỰC HIỆN</small><h3 id="team-title">Thành viên tham gia dự án</h3></div></div>
+                    <p class="about-section-note">Sản phẩm được thực hiện với sự đóng góp của các thành viên tập thể lớp 12A9.</p>
+                    <div class="team-grid">
+                        <article class="team-member"><span class="team-avatar">NY</span><strong>Ngọc Yến</strong><small>Thành viên dự án</small></article>
+                        <article class="team-member"><span class="team-avatar">MA</span><strong>Minh Anh</strong><small>Thành viên dự án</small></article>
+                        <article class="team-member"><span class="team-avatar">TV</span><strong>Tường Vy</strong><small>Thành viên dự án</small></article>
+                        <article class="team-member"><span class="team-avatar">TL</span><strong>Trúc Ly</strong><small>Thành viên dự án</small></article>
+                        <article class="team-member"><span class="team-avatar">HN</span><strong>Huỳnh Như</strong><small>Thành viên dự án</small></article>
+                    </div>
+                </section>
+
+                <section class="teacher-panel" aria-labelledby="teacher-title">
+                    <div class="teacher-emblem"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <div class="teacher-copy">
+                        <small>GIÁO VIÊN HƯỚNG DẪN & HỖ TRỢ</small>
+                        <h3 id="teacher-title">Trần Vương Mỹ</h3>
+                        <p>Nhóm trân trọng cảm ơn giáo viên hướng dẫn Trần Vương Mỹ đã hỗ trợ và đồng hành trong quá trình thực hiện dự án. Sự góp ý và động viên của cô là nguồn khích lệ để nhóm hoàn thiện sản phẩm học tập này.</p>
+                    </div>
+                    <div class="teacher-thanks"><i class="fa-solid fa-heart"></i><span>Trân trọng cảm ơn</span></div>
+                </section>
+
+                <section class="about-panel sources-panel" aria-labelledby="sources-title">
+                    <div class="about-heading"><span>06</span><div><small>MINH BẠCH & ĐỐI CHIẾU</small><h3 id="sources-title">Nguồn tư liệu tham khảo</h3></div></div>
+                    <p class="about-section-note">Nguồn nội dung chính được liệt kê dưới đây. Nguồn ảnh cụ thể được ghi ngay dưới từng hình và trong cửa sổ phóng to; mỗi hồ sơ nhân vật và từng dấu mốc cũng có liên kết đọc thêm riêng.</p>
+                    <div class="source-catalog">
+                        <div class="source-group">
+                            <h4><i class="fa-solid fa-landmark"></i> Tư liệu lịch sử và bảo tàng</h4>
+                            <a href="https://baotanglichsu.vn/vi/Articles/3098/13485/cuoc-khoi-nghia-hai-ba-trung-nam-40-43-sau-cong-nguyen.html" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – Cuộc khởi nghĩa Hai Bà Trưng (năm 40–43) ↗</a>
+                            <a href="https://dsvh.gov.vn/di-tich-lich-su-den-hai-ba-trung-2970" target="_blank" rel="noopener noreferrer">Cục Di sản văn hóa – Di tích lịch sử Đền Hai Bà Trưng ↗</a>
+                            <a href="https://baotanglichsu.vn/VI/Articles/3098/16192/ly-thuong-kiet-nguoi-chi-huy-kiet-xuat-cua-cuoc-khang-chien-chong-quan-tong-lan-thu-hai.html" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – Lý Thường Kiệt và kháng chiến chống Tống ↗</a>
+                            <a href="https://baotanglichsu.vn/vi/Articles/3127/71253/phat-hien-bai-coc-trong-tran-thuy-chien-tren-song-bach-djang-nam-1288.html" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – Bãi cọc và trận Bạch Đằng năm 1288 ↗</a>
+                            <a href="https://baotanglichsu.vn/vi/Articles/3091/19881/di-tich-lich-su-rach-gam-xoai-mut.html" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – Di tích Rạch Gầm – Xoài Mút ↗</a>
+                            <a href="https://baotanglichsu.vn/VI/Articles/3101/71082/co-vat-thoi-tay-son-1788-1802.html" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – Cổ vật thời Tây Sơn ↗</a>
+                        </div>
+                        <div class="source-group">
+                            <h4><i class="fa-solid fa-book-open"></i> Hồ Chí Minh và lịch sử hiện đại</h4>
+                            <a href="https://hochiminh.vn/cuoc-doi-su-nghiep/tieu-su-ho-chi-minh/tieu-su-chu-tich-ho-chi-minh-1890-1969-9" target="_blank" rel="noopener noreferrer">Cổng thông tin Hồ Chí Minh – Tiểu sử Chủ tịch Hồ Chí Minh ↗</a>
+                            <a href="https://hochiminh.vn/tu-lieu-anh" target="_blank" rel="noopener noreferrer">Cổng thông tin Hồ Chí Minh – Thư viện tư liệu ảnh ↗</a>
+                            <a href="https://tulieuvankien.dangcongsan.vn/" target="_blank" rel="noopener noreferrer">Tư liệu – Văn kiện Đảng Cộng sản Việt Nam ↗</a>
+                            <a href="https://vnanet.vn/vi/anh/anh-chuyen-de-1053/ky-niem-130-nam-ngay-sinh-chu-tich-ho-chi-minh-1951890--1952020-tu-ben-nha-rong-den-quang-truong-ba-dinh-lich-su-4663521.html" target="_blank" rel="noopener noreferrer">Thông tấn xã Việt Nam – Từ Bến Nhà Rồng đến Ba Đình ↗</a>
+                        </div>
+                        <div class="source-group">
+                            <h4><i class="fa-solid fa-images"></i> Nguồn hình ảnh và tư liệu trực quan</h4>
+                            <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons – Kho tư liệu hình ảnh và trang giấy phép từng tệp ↗</a>
+                            <a href="https://vietnamtourism.vn/en/index.php/tourism/items/1339" target="_blank" rel="noopener noreferrer">Cục Du lịch Quốc gia Việt Nam – Bảo tàng Quang Trung ↗</a>
+                            <a href="https://www.vietnamairlines.com/ph/en/useful-information/travel-guide/pac-bo-cave" target="_blank" rel="noopener noreferrer">Vietnam Airlines – Di tích Pác Bó ↗</a>
+                            <a href="https://baotanglichsu.vn/" target="_blank" rel="noopener noreferrer">Bảo tàng Lịch sử Quốc gia – tư liệu và hiện vật ↗</a>
+                        </div>
+                    </div>
+                    <div class="source-note"><i class="fa-solid fa-circle-info"></i><p><strong>Lưu ý về tư liệu:</strong> Nội dung trên website là bản tóm lược phục vụ học tập, không thay thế sách giáo khoa hay công trình nghiên cứu chuyên sâu. Tranh vẽ, tượng đài và hình tái hiện được ghi rõ là hình minh họa, không phải chân dung hoặc ảnh chụp trực tiếp từ thời kỳ của nhân vật. Người xem nên mở nguồn gốc để kiểm tra chú thích, tác giả và điều kiện sử dụng của từng hình.</p></div>
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-crimson-950 border-t-2 border-gold/60 text-parchment py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-2 text-gold-400 font-heading font-bold text-sm">
+                <i class="fa-solid fa-star"></i>
+                <span>DẤU ẤN ANH HÙNG DÂN TỘC</span>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="school-credit mx-auto">
+                <i class="fa-solid fa-graduation-cap text-gold-400"></i>
+                <span>Thực hiện: Tập thể lớp 12A9 – Trường THPT Kế Sách</span>
+            </div>
+            <p class="text-xs text-parchment/70 max-w-2xl mx-auto leading-relaxed">
+                © 2026 Dự án học tập “Dấu Ấn Anh Hùng Dân Tộc”. Hình ảnh tư liệu được dẫn nguồn tại Thư viện ảnh.
+            </p>
+        </div>
+    </footer>
+
+    <!-- IMAGE LIGHTBOX: explicit hidden state prevents flex/hidden utility conflicts -->
+    <div id="lightbox" class="lightbox-overlay" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem hình ảnh">
+        <div class="lightbox-panel" role="document">
+            <button type="button" onclick="closeLightbox()" class="lightbox-close" aria-label="Đóng ảnh"><i class="fa-solid fa-xmark"></i></button>
+            <div class="lightbox-image-stage">
+                <img id="lightbox-img" src="" alt="" decoding="async">
+            </div>
+            <div class="lightbox-meta">
+                <div><h4 id="lightbox-title"></h4><p id="lightbox-desc"></p></div>
+                <a id="lightbox-source" href="#" target="_blank" rel="noopener noreferrer" hidden>Mở nguồn ảnh <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Structures
+        const charactersData = {
+            'hai-ba-trung': {
+                name: 'Hai Bà Trưng', shortName: 'Trưng Trắc & Trưng Nhị',
+                subtitle: 'Hai nữ thủ lĩnh khởi nghĩa tiêu biểu đầu Công nguyên',
+                time: 'Thế kỷ I · Khởi nghĩa năm 40 – kháng chiến đến năm 43',
+                place: 'Mê Linh · Cửa sông Hát · Luy Lâu',
+                image: 'https://phunuvietnam.mediacdn.vn/media/news/efdde87c66fe4e6dc73a2ab6111ca58a/n-th-hai-b-trung.jpg',
+                imageCaption: 'Tượng thờ Hai Bà Trưng tại đền', imageCredit: 'Báo Phụ nữ Việt Nam', imageSource: 'https://phunuvietnam.vn/hai-ba-trung-ngon-co-giai-phong-dan-toc-dau-tien-cua-phu-nu-viet-2386539.htm',
+                quote: 'Một xin rửa sạch nước thù,\nHai xin dựng lại nghiệp xưa họ Hùng,\nBa kẻo oan ức lòng chồng,\nBốn xin vẹn toàn nghị này.',
+                intro: 'Trưng Trắc và Trưng Nhị là hai chị em xuất thân từ vùng Mê Linh, đã lãnh đạo cuộc khởi nghĩa năm 40 chống chính quyền đô hộ Đông Hán. Phong trào nhanh chóng lan rộng, lật đổ bộ máy cai trị ở nhiều quận, huyện và đưa Trưng Trắc lên ngôi, mở ra một giai đoạn tự chủ ngắn nhưng có ý nghĩa sâu sắc.',
+                quickFacts: [
+                    { label: 'Mốc nổi bật', value: 'Năm 40' },
+                    { label: 'Địa bàn khởi nghĩa', value: 'Cửa sông Hát – Mê Linh' },
+                    { label: 'Vai trò', value: 'Hai nữ thủ lĩnh' }
+                ],
+                background: 'Theo tư liệu của Bảo tàng Lịch sử Quốc gia, Trưng Trắc và Trưng Nhị là con gái một vị Lạc tướng ở Mê Linh; mẹ là bà Man Thiện. Gia đình gắn với nghề nông, trồng dâu nuôi tằm và truyền thống rèn luyện sức khỏe, võ nghệ. Trưng Trắc kết hôn với Thi Sách, con một Lạc tướng ở Chu Diên. Bối cảnh đầu thế kỷ I là thời kỳ người dân Âu Lạc chịu sự cai trị và bóc lột của nhà Đông Hán.',
+                biography: 'Trưng Trắc là người được nhân dân Mê Linh tin phục; Trưng Nhị cùng chị tham gia lãnh đạo phong trào. Khi thái thú Tô Định tìm cách triệt hạ thế lực gia đình Trưng Trắc và Thi Sách bị giết, bà không lùi bước. Tháng 2 năm 40, hai bà phát động khởi nghĩa tại cửa sông Hát. Nghĩa quân tiến về Mê Linh rồi đánh Luy Lâu – trung tâm cai trị của nhà Đông Hán tại Giao Chỉ. Phong trào nhận được sự hưởng ứng rộng rãi của cư dân nhiều vùng.',
+                story: 'Điểm đặc biệt trong câu chuyện Hai Bà Trưng là lời thề khởi nghĩa đặt việc nước bên cạnh nỗi đau riêng. Tư liệu bảo tàng ghi lại bốn mục tiêu của cuộc khởi nghĩa; trong đó, ý chí khôi phục quyền tự chủ được đặt lên hàng đầu. Sau thắng lợi, Trưng Trắc được suy tôn làm vua, đóng đô ở Mê Linh. Theo bài viết của Bảo tàng Lịch sử Quốc gia, chính quyền Trưng Vương từng thực hiện một số chính sách giảm nhẹ gánh nặng cho dân như miễn thuế trong hai năm.',
+                achievements: [
+                    'Lãnh đạo cuộc khởi nghĩa năm 40, đánh đổ chính quyền đô hộ Đông Hán ở Giao Chỉ và Cửu Chân trong giai đoạn đầu của phong trào.',
+                    'Trưng Trắc được suy tôn làm vua, lập chính quyền tại Mê Linh và duy trì quyền tự chủ trong gần ba năm.',
+                    'Phong trào quy tụ nhiều lực lượng và cộng đồng cư dân, cho thấy sức lan tỏa rộng lớn của tinh thần chống áp bức.'
+                ],
+                contributions: 'Hai Bà Trưng trở thành biểu tượng tiêu biểu của lòng yêu nước, ý chí tự chủ và vai trò của phụ nữ trong lịch sử Việt Nam. Câu chuyện của hai bà được lưu truyền qua sử sách, lễ hội, đền thờ, tên đường và hoạt động giáo dục lịch sử. Giá trị còn lại không chỉ là một chiến thắng quân sự, mà còn là bài học về sự đồng lòng và khả năng tập hợp cộng đồng.',
+                milestones: [
+                    { year: 'Trước năm 40', text: 'Trưng Trắc và Trưng Nhị trưởng thành tại vùng Mê Linh; Trưng Trắc kết hôn với Thi Sách.' },
+                    { year: 'Tháng 2 năm 40', text: 'Hai bà phát động khởi nghĩa ở cửa sông Hát; nghĩa quân tiến về Mê Linh và Luy Lâu.' },
+                    { year: 'Sau thắng lợi năm 40', text: 'Trưng Trắc được suy tôn làm vua, đóng đô ở Mê Linh; chính quyền tự chủ được thiết lập.' },
+                    { year: 'Năm 42–43', text: 'Nhà Đông Hán tổ chức cuộc phản công do Mã Viện chỉ huy; cuộc kháng chiến của Hai Bà Trưng kết thúc trong giai đoạn này.' }
+                ],
+                funFacts: [
+                    'Mê Linh là trung tâm chính trị gắn với cuộc khởi nghĩa và chính quyền Trưng Vương.',
+                    'Lời thề của Hai Bà Trưng được sử sách và truyền thống dân gian lưu giữ như một tuyên ngôn về ý chí tự chủ.',
+                    'Bảo tàng Lịch sử Quốc gia ghi nhận chính quyền Trưng Vương từng miễn thuế cho dân trong hai năm.'
+                ],
+                gallery: [
+                    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hai_ba_trung_Dong_Ho_painting.jpg/960px-Hai_ba_trung_Dong_Ho_painting.jpg', caption: 'Tranh dân gian Đông Hồ tái hiện Hai Bà Trưng', credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Hai_ba_trung_Dong_Ho_painting.jpg' },
+                    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg/960px-Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg', caption: 'Tranh minh họa Hai Bà Trưng chống quân Đông Hán', credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg' }
+                ],
+                sources: [
+                    { label: 'Bảo tàng Lịch sử Quốc gia – Cuộc khởi nghĩa Hai Bà Trưng (năm 40–43)', url: 'https://baotanglichsu.vn/vi/Articles/3098/13485/cuoc-khoi-nghia-hai-ba-trung-nam-40-43-sau-cong-nguyen.html' }
+                ]
+            },
+            'ly-thuong-kiet': {
+                name: 'Lý Thường Kiệt', shortName: 'Ngô Tuấn – Lý Thường Kiệt',
+                subtitle: 'Danh tướng nhà Lý, người chỉ huy cuộc kháng chiến chống Tống thế kỷ XI',
+                time: '1019 – 1105', place: 'Thăng Long · Phòng tuyến sông Như Nguyệt',
+                image: 'https://vietnamtimes.thoidai.com.vn/stores/news_dataimages/ngocquynhvnt/082020/02/00/1359_1740_ly_thuong_kiet.jpg?rt=20200802001401%3FrandTime%3D1771664543',
+                imageCaption: 'Tượng danh tướng Lý Thường Kiệt', imageCredit: 'Vietnam Times', imageSource: 'https://vietnamtimes.thoidai.com.vn/vietnam-territory-throughout-history-and-in-the-new-era-22987.html',
+                quote: 'Nam quốc sơn hà Nam đế cư,\nTiệt nhiên định phận tại thiên thư.\nNhư hà nghịch lỗ lai xâm phạm,\nNhữ đẳng hành khán thủ bại hư.',
+                intro: 'Lý Thường Kiệt (1019–1105), tên thật Ngô Tuấn, là danh tướng và đại thần nổi bật dưới triều Lý. Ông gắn liền với chủ trương chủ động phòng vệ trước nguy cơ xâm lược và vai trò chỉ huy cuộc kháng chiến chống Tống năm 1075–1077.',
+                quickFacts: [
+                    { label: 'Năm sinh – mất', value: '1019 – 1105' },
+                    { label: 'Triều đại', value: 'Nhà Lý' },
+                    { label: 'Dấu mốc tiêu biểu', value: 'Như Nguyệt · 1077' }
+                ],
+                background: 'Bảo tàng Lịch sử Quốc gia cho biết ông vốn họ Ngô, tên Tuấn, quê ở vùng Cơ Xá, Gia Lâm, Thăng Long ngày nay; cha là Sùng Tiết tướng quân Ngô An Ngữ. Ông sinh ra trong gia đình có truyền thống học hành và làm quan. Từ nhỏ, ông ham đọc binh thư và luyện tập võ nghệ. Năm 1041, ông được đưa vào ngạch phục vụ trong cung; về sau được vua Lý Thái Tông nhận làm con nuôi và đổi tên thành Lý Thường Kiệt.',
+                biography: 'Lý Thường Kiệt trải qua ba triều vua Lý Thái Tông, Lý Thánh Tông và Lý Nhân Tông. Ông đảm nhiệm nhiều trọng trách, từng giữ chức Thái úy và nắm quyền chỉ huy quân đội. Ngoài việc quân, tư liệu bảo tàng còn ghi nhận ông tham gia xử lý công việc triều chính và cùng các đại thần chăm lo xây dựng đất nước. Sự nghiệp của ông cho thấy hình ảnh một đại thần vừa có năng lực quân sự, vừa tham gia quản trị quốc gia.',
+                story: 'Một câu chuyện thường được nhắc đến gắn với phòng tuyến sông Như Nguyệt là bài thơ “Nam quốc sơn hà”. Theo bài viết của Bảo tàng Lịch sử Quốc gia, bài thơ xuất hiện vào thời điểm cuộc chiến căng thẳng, góp phần cổ vũ tinh thần quân dân Đại Việt. Khi giới thiệu trong học tập, nên diễn đạt thận trọng rằng bài thơ được truyền thống sử học gắn với Lý Thường Kiệt và cuộc kháng chiến năm 1077; lịch sử văn bản của bài thơ còn có những trao đổi học thuật.',
+                achievements: [
+                    'Năm 1069, được giao làm nguyên soái trong chiến dịch ở phía Nam; sau đó tiếp tục giữ những chức vụ trọng yếu trong triều đình nhà Lý.',
+                    'Năm 1075, chủ trương tiến công trước vào các căn cứ hậu cần quân sự của nhà Tống ở vùng biên giới nhằm phá thế chuẩn bị xâm lược.',
+                    'Năm 1077, chỉ huy quân dân Đại Việt phòng thủ tại tuyến sông Cầu – Như Nguyệt; sau chiến thắng, chủ động giảng hòa để kết thúc chiến tranh.',
+                    'Góp phần bảo vệ nền độc lập, chủ quyền và sự ổn định của Đại Việt dưới triều Lý.'
+                ],
+                contributions: 'Di sản nổi bật của Lý Thường Kiệt là tư duy chiến lược chủ động, biết kết hợp sức mạnh quân sự với ổn định nội bộ và giải pháp ngoại giao. Hình ảnh ông cùng bài thơ “Nam quốc sơn hà” thường được nhắc đến như biểu tượng của ý thức độc lập, chủ quyền và lòng tự tin dân tộc.',
+                milestones: [
+                    { year: '1019', text: 'Sinh ra tại Thăng Long, tên thuở nhỏ là Ngô Tuấn.' },
+                    { year: '1041', text: 'Bắt đầu giữ chức vụ trong cung; về sau được ban quốc tính và mang tên Lý Thường Kiệt.' },
+                    { year: '1069', text: 'Được giao chỉ huy chiến dịch ở phía Nam dưới triều Lý Thánh Tông.' },
+                    { year: '1075', text: 'Chủ trương tiến công trước để phá các căn cứ chuẩn bị chiến tranh của nhà Tống.' },
+                    { year: '1077', text: 'Chỉ huy kháng chiến trên phòng tuyến sông Như Nguyệt; cuộc chiến kết thúc bằng giảng hòa.' },
+                    { year: '1105', text: 'Qua đời, để lại dấu ấn lớn trong lịch sử quân sự và chính trị thời Lý.' }
+                ],
+                funFacts: [
+                    'Tên khai sinh của ông là Ngô Tuấn; tên Lý Thường Kiệt gắn với việc được triều đình ban quốc tính.',
+                    'Phòng tuyến sông Như Nguyệt còn được gọi là phòng tuyến sông Cầu.',
+                    'Bài thơ “Nam quốc sơn hà” được ghi nhớ rộng rãi trong lịch sử, văn học và giáo dục như lời khẳng định chủ quyền.'
+                ],
+                gallery: [
+                    { src: 'https://rgb.vn/wp-content/uploads/2020/04/rgb-creative-art-anh-hung-4000-do-thai-thanh-07.jpg', caption: 'Tranh minh họa Lý Thường Kiệt của họa sĩ Đỗ Thái Thanh', credit: 'RGB / Đỗ Thái Thanh', source: 'https://rgb.vn/anh-hung-4000-va-cam-hung-ve-ve-lich-su-tu-hoa-si-do-thai-thanh/' },
+                    { src: 'https://nhn.1cdn.vn/2023/10/24/tuong-dai-ly-thuong-kiet.jpg', caption: 'Tượng đài Lý Thường Kiệt', credit: 'Người Hà Nội', source: 'https://nguoihanoi.vn/ly-thuong-kiet-nha-quan-su-kiet-xuat-78827.html' },
+                    { src: 'https://mail.nguoikesu.com/images/wiki/tran-nhu-nguyet/31efb130e53be312cf65539dc1f0e1aa.png', caption: 'Sơ đồ minh họa trận Như Nguyệt năm 1077', credit: 'Người Kể Sử', source: 'https://nguoikesu.com/tu-lieu/quan-su/tran-nhu-nguyet-nam-1077' }
+                ],
+                sources: [
+                    { label: 'Bảo tàng Lịch sử Quốc gia – Lý Thường Kiệt, người chỉ huy kiệt xuất của cuộc kháng chiến chống Tống', url: 'https://baotanglichsu.vn/VI/Articles/3098/16192/ly-thuong-kiet-nguoi-chi-huy-kiet-xuat-cua-cuoc-khang-chien-chong-quan-tong-lan-thu-hai.html' },
+                    { label: 'Bộ Khoa học và Công nghệ – Thông tin về bộ tem kỷ niệm 1.000 năm ngày sinh Lý Thường Kiệt', url: 'https://mst.gov.vn/nam-2019-se-phat-hanh-tem-ky-niem-1000-nam-ngay-sinh-ly-thuong-kiet-197136889.htm' }
+                ]
+            },
+            'tran-hung-dao': {
+                name: 'Trần Hưng Đạo', shortName: 'Trần Quốc Tuấn',
+                subtitle: 'Quốc công Tiết chế, danh tướng gắn với ba cuộc kháng chiến chống Nguyên – Mông',
+                time: 'Thế kỷ XIII · Qua đời năm 1300 (năm sinh có dị bản)', place: 'Vạn Kiếp · Thăng Long · Sông Bạch Đằng',
+                image: 'https://media.quangninh.gov.vn/d07e4659-2aae-4343-a2d5-478b67c08003/Libraries/HinhAnhBaiViet/Thu%20Minh/nam%202021/thang%202/a%20tran%20hung%20dao%203.jpg',
+                imageCaption: 'Tượng Trần Hưng Đạo tại Quảng Ninh', imageCredit: 'Cổng thông tin Du lịch Quảng Ninh', imageSource: 'https://dulich.quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=2336',
+                quote: 'Khoan thư sức dân để làm kế sâu rễ bền gốc.',
+                intro: 'Trần Hưng Đạo, tên thật Trần Quốc Tuấn, là nhà chính trị và nhà quân sự tiêu biểu thời Trần. Ông giữ vai trò tổng chỉ huy trong các cuộc kháng chiến chống Nguyên – Mông lần thứ hai và thứ ba; chiến thắng Bạch Đằng năm 1288 gắn liền với tên tuổi ông.',
+                quickFacts: [
+                    { label: 'Tên thật', value: 'Trần Quốc Tuấn' },
+                    { label: 'Thời đại', value: 'Nhà Trần · Thế kỷ XIII' },
+                    { label: 'Dấu mốc', value: 'Bạch Đằng · 1288' }
+                ],
+                background: 'Trần Quốc Tuấn là con An Sinh Vương Trần Liễu, thuộc hoàng tộc nhà Trần. Ông lớn lên trong môi trường coi trọng học vấn và võ nghệ. Năm sinh của ông chưa thống nhất giữa các tài liệu; nhiều tài liệu thường ghi 1228, trong khi một số nguồn nêu 1230 hoặc 1232. Vì vậy, hồ sơ này không khẳng định một ngày sinh tuyệt đối.',
+                biography: 'Từ nhỏ, Trần Quốc Tuấn được học cả văn chương, binh thư và võ nghệ. Khi đất nước đối diện các cuộc xâm lược của đế chế Nguyên – Mông, ông được triều đình giao trọng trách chỉ huy. Đặc biệt trong cuộc kháng chiến năm 1285 và 1287–1288, ông giữ chức Tiết chế, chỉ huy các lực lượng thủy bộ. Ông cũng biết trọng dụng người tài và xây dựng sự gắn kết giữa tướng lĩnh, binh sĩ.',
+                story: 'Một nét đáng nhớ trong cuộc đời Trần Quốc Tuấn là việc đặt lợi ích quốc gia lên trên mâu thuẫn riêng trong hoàng tộc. Các tư liệu viết về ông nhấn mạnh tinh thần đoàn kết với các thành viên hoàng tộc và tướng lĩnh để cùng lo việc nước. Ông viết “Hịch tướng sĩ” nhằm khơi dậy trách nhiệm, lòng tự trọng và ý chí của đội ngũ tướng sĩ trước nguy cơ xâm lược.',
+                achievements: [
+                    'Tham gia chỉ huy và góp công lớn trong cả ba cuộc kháng chiến chống Nguyên – Mông vào các năm 1258, 1285 và 1287–1288.',
+                    'Giữ chức Tiết chế trong cuộc kháng chiến lần thứ hai và thứ ba, gắn với các thắng lợi Hàm Tử, Chương Dương, Vạn Kiếp và Bạch Đằng.',
+                    'Biên soạn, truyền dạy binh thư; “Hịch tướng sĩ” là tác phẩm nổi bật về tinh thần trách nhiệm và lòng yêu nước.',
+                    'Để lại tư tưởng coi trọng sức dân, đoàn kết và dùng người tài.'
+                ],
+                contributions: 'Trần Hưng Đạo để lại di sản về nghệ thuật lãnh đạo, xây dựng khối đoàn kết và tư tưởng lấy dân làm gốc. Ông được nhân dân tôn kính với danh xưng Đức Thánh Trần; đền Kiếp Bạc và nhiều di tích thờ ông trở thành địa chỉ văn hóa – lịch sử quan trọng.',
+                milestones: [
+                    { year: 'Thế kỷ XIII', text: 'Trần Quốc Tuấn trưởng thành trong hoàng tộc nhà Trần, được đào tạo về văn và võ.' },
+                    { year: '1258', text: 'Tham gia cuộc kháng chiến chống quân Mông Cổ lần thứ nhất.' },
+                    { year: '1285', text: 'Được giao trọng trách chỉ huy trong cuộc kháng chiến lần thứ hai; quân dân Đại Việt giành lại thế chủ động.' },
+                    { year: '1287–1288', text: 'Lãnh đạo cuộc kháng chiến lần thứ ba; chiến thắng Bạch Đằng năm 1288 là đỉnh cao.' },
+                    { year: '1300', text: 'Qua đời; được triều đình truy phong và nhân dân tôn kính lâu dài.' }
+                ],
+                funFacts: [
+                    'Năm sinh của Trần Hưng Đạo có dị bản; vì vậy nhiều tài liệu ghi khoảng 1228–1232 thay vì một mốc duy nhất.',
+                    '“Hịch tướng sĩ” là văn bản nổi tiếng kết hợp lập luận, cảm xúc và lời kêu gọi trách nhiệm.',
+                    'Câu “Khoan thư sức dân…” thường được nhắc như một tư tưởng cốt lõi về xây dựng nền tảng quốc gia.'
+                ],
+                gallery: [
+                    { src: 'https://lp-cms-production.imgix.net/2023-09/shutterstock1159902871.jpg?auto=format%2Ccompress&crop=faces%2Cedges&fit=crop&q=72&w=1200', caption: 'Tượng Trần Hưng Đạo tại Thành phố Hồ Chí Minh', credit: 'Lonely Planet', source: 'https://www.lonelyplanet.com/points-of-interest/tran-hung-dao-statue/1393094' },
+                    { src: 'https://danviet.ex-cdn.com/files/f1/thumb_w/650/296231569849192448/2021/9/3/105-1630673676761784619056.jpg', caption: 'Tranh minh họa Trần Hưng Đạo trong kháng chiến chống Nguyên – Mông', credit: 'Dân Việt', source: 'https://danviet.vn/nghe-thuat-quan-su-nguoi-viet-ky-4-ke-vuon-khong-nha-trong-khien-giac-nguyen-mong-bat-via-20210903202821906-d974210.html' },
+                    { src: 'https://www.vietspacetravel.com/resources/destination/1569037707957-bach-dang-stake-yard-quang-ninh.jpg', caption: 'Khu bãi cọc Bạch Đằng – dấu tích gắn với chiến thắng năm 1288', credit: 'Vietspace Travel', source: 'https://www.vietspacetravel.com/destination/bach-dang-stake-yard.html' }
+                ],
+                sources: [
+                    { label: 'Trường THPT Trần Hưng Đạo – Sơ lược tiểu sử Trần Hưng Đạo', url: 'https://c3tranhungdao.daknong.edu.vn/so-luoc-tieu-su-tran-hung-dao.html' },
+                    { label: 'Bảo tàng Lịch sử Quân sự Việt Nam – Bạch Đằng Giang', url: 'https://btlsqsvn.mod.gov.vn/tin-tuc/chi-tiet/bach-dang-giang-noi-khi-thieng-song-nui-hoi-tu-a7e6cabf-6f02-42ee-85ea-6163d9ac0599' }
+                ]
+            },
+            'quang-trung': {
+                name: 'Quang Trung – Nguyễn Huệ', shortName: 'Nguyễn Huệ · Hoàng đế Quang Trung',
+                subtitle: 'Thủ lĩnh phong trào Tây Sơn, vị hoàng đế gắn với những chiến thắng lớn cuối thế kỷ XVIII',
+                time: '1753 – 1792', place: 'Tây Sơn · Rạch Gầm – Xoài Mút · Ngọc Hồi – Đống Đa',
+                image: 'https://file3.qdnd.vn/data/images/0/2025/03/03/upload_2130/a2.jpg?dpi=150&quality=100&w=870',
+                imageCaption: 'Tượng Quang Trung tại Công viên văn hóa Đống Đa', imageCredit: 'Báo Quân đội nhân dân', imageSource: 'https://www.qdnd.vn/van-hoa/doi-song/cong-vien-van-hoa-dong-da-su-hoa-quyen-giua-lich-su-va-hien-dai-817980',
+                quote: 'Đánh cho để dài tóc,\nĐánh cho để đen răng…',
+                intro: 'Nguyễn Huệ – Quang Trung là một trong những lãnh tụ nổi bật của phong trào Tây Sơn. Ông gắn với chiến thắng Rạch Gầm – Xoài Mút năm 1785 trước quân Xiêm và chiến thắng Ngọc Hồi – Đống Đa năm 1789 trước quân Thanh.',
+                quickFacts: [
+                    { label: 'Năm sinh – mất', value: '1753 – 1792' },
+                    { label: 'Phong trào', value: 'Tây Sơn' },
+                    { label: 'Chiến thắng tiêu biểu', value: '1785 · 1789' }
+                ],
+                background: 'Nguyễn Huệ sinh năm 1753, tại vùng Tây Sơn, phủ Quy Nhơn (địa danh hành chính ngày nay đã thay đổi). Ông cùng hai người anh là Nguyễn Nhạc và Nguyễn Lữ trưởng thành trong bối cảnh xã hội Đàng Trong nhiều biến động. Năm 1771, phong trào Tây Sơn khởi phát và phát triển thành một phong trào chính trị – quân sự rộng lớn.',
+                biography: 'Nguyễn Huệ sớm thể hiện tài năng tổ chức và chỉ huy. Trong phong trào Tây Sơn, ông đảm nhiệm nhiều chiến dịch quan trọng ở cả miền Nam và miền Bắc. Năm 1785, ông chỉ huy chiến thắng Rạch Gầm – Xoài Mút. Cuối năm 1788, ông lên ngôi hoàng đế, lấy niên hiệu Quang Trung; mùa xuân 1789, ông chỉ huy quân Tây Sơn giành thắng lợi trong chiến dịch Ngọc Hồi – Đống Đa, giải phóng Thăng Long.',
+                story: 'Câu chuyện thường được nhắc đến nhất về Quang Trung là cuộc tiến quân ra Bắc vào dịp Tết Kỷ Dậu 1789. Trong thời gian ngắn, nghĩa quân Tây Sơn giành thắng lợi ở nhiều vị trí then chốt. Chi tiết về lịch trình và con số quân số có khác biệt giữa các công trình nghiên cứu; hồ sơ này tập trung vào mốc sự kiện đã được các nguồn lịch sử ghi nhận thay vì khẳng định một con số duy nhất.',
+                achievements: [
+                    'Cùng phong trào Tây Sơn tạo nên chuyển biến lớn trong cục diện chính trị cuối thế kỷ XVIII.',
+                    'Chỉ huy chiến thắng Rạch Gầm – Xoài Mút năm 1785, đánh bại lực lượng Xiêm can thiệp vào Đại Việt.',
+                    'Lên ngôi hoàng đế với niên hiệu Quang Trung cuối năm 1788; lãnh đạo chiến thắng Ngọc Hồi – Đống Đa mùa xuân 1789.',
+                    'Triều Tây Sơn đề ra nhiều chủ trương khuyến nông, khuyến học và đề cao chữ Nôm; một số kế hoạch cải cách bị gián đoạn sau khi Quang Trung qua đời năm 1792.'
+                ],
+                contributions: 'Quang Trung để lại dấu ấn lớn về tinh thần đổi mới, khả năng tập hợp lực lượng và quyết tâm bảo vệ nền độc lập. Các chính sách của triều Tây Sơn về nông nghiệp, giáo dục và chữ Nôm cho thấy nỗ lực ổn định đất nước sau thời kỳ biến động. Khi trình bày, cần phân biệt thành tựu của cá nhân Quang Trung với chính sách chung của triều đại Tây Sơn.',
+                milestones: [
+                    { year: '1753', text: 'Nguyễn Huệ chào đời tại vùng Tây Sơn, phủ Quy Nhơn.' },
+                    { year: '1771', text: 'Phong trào Tây Sơn khởi phát; Nguyễn Huệ trở thành một trong những lãnh tụ chủ chốt.' },
+                    { year: '1785', text: 'Chiến thắng Rạch Gầm – Xoài Mút trên sông Tiền.' },
+                    { year: 'Cuối năm 1788', text: 'Nguyễn Huệ lên ngôi hoàng đế, lấy niên hiệu Quang Trung.' },
+                    { year: 'Mùa xuân 1789', text: 'Chiến thắng Ngọc Hồi – Đống Đa, giải phóng Thăng Long.' },
+                    { year: '1792', text: 'Quang Trung qua đời khi nhiều kế hoạch xây dựng đất nước còn đang triển khai.' }
+                ],
+                funFacts: [
+                    'Tên Nguyễn Huệ gắn với giai đoạn lãnh đạo phong trào Tây Sơn; Quang Trung là niên hiệu sau khi ông lên ngôi hoàng đế.',
+                    'Rạch Gầm – Xoài Mút diễn ra trên sông Tiền, thuộc vùng Tiền Giang ngày nay.',
+                    'Chiến thắng Ngọc Hồi – Đống Đa diễn ra vào Tết Kỷ Dậu 1789 và thường được nhắc đến trong các hoạt động kỷ niệm đầu xuân.'
+                ],
+                gallery: [
+                    { src: 'https://hvlq.vn/upload/61311/fck/tuanhvlq/2026_04_12_03_33_581.png', caption: 'Tranh minh họa Hoàng đế Quang Trung', credit: 'Học viện Lục quân', source: 'https://hvlq.vn/tin-tuc/chien-thuat-chien-dich/san-pham-thong-tin/thu-vien-so/cac-hoat-dong/hao-khi-tay-son-va-suc-manh-cua-tri-thuc-cam-nhan-ve-cuon-sach-quang-trung-nguyen-hue-voi-chien-thang-ngoc-hoi-dong-da-.html' },
+                    { src: 'https://mia.vn/media/uploads/blog-du-lich/ve-tham-khu-di-tich-chien-thang-rach-gam-xoai-mut-hao-hung-01-1651058844.jpg', caption: 'Khu di tích chiến thắng Rạch Gầm – Xoài Mút', credit: 'MIA.vn', source: 'https://mia.vn/cam-nang-du-lich/ve-tham-khu-di-tich-chien-thang-rach-gam-xoai-mut-hao-hung-5283' },
+                    { src: 'https://commons.wikimedia.org/wiki/Special:FilePath/T%C6%B0%E1%BB%A3ng_Quang_Trung_-_Nguy%E1%BB%85n_Hu%E1%BB%87_t%E1%BA%A1i_di_t%C3%ADch_An_Kh%C3%AA_%C4%90%C3%ACnh.jpg?width=1200', caption: 'Tượng Quang Trung – Nguyễn Huệ tại di tích An Khê Đình', credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Tượng_Quang_Trung_-_Nguyễn_Huệ_tại_di_tích_An_Khê_Đình.jpg' }
+                ],
+                sources: [
+                    { label: 'Bảo tàng Lịch sử Quốc gia – Di tích lịch sử Rạch Gầm – Xoài Mút', url: 'https://baotanglichsu.vn/vi/Articles/3091/19881/di-tich-lich-su-rach-gam-xoai-mut.html' },
+                    { label: 'Báo Điện tử Chính phủ – Chiến thắng Ngọc Hồi – Đống Đa năm 1789', url: 'https://baochinhphu.vn/chien-thang-hien-hach-trong-lich-su-chong-ngoai-xam-102138325.htm' },
+                    { label: 'Trường THCS, THPT Quang Trung Nguyễn Huệ – Giới thiệu vua Quang Trung', url: 'https://qtnh.edu.vn/gioi-thieu.html' }
+                ]
+            },
+            'ho-chi-minh': {
+                name: 'Chủ tịch Hồ Chí Minh', shortName: 'Nguyễn Sinh Cung · Nguyễn Tất Thành · Nguyễn Ái Quốc',
+                subtitle: 'Lãnh tụ cách mạng Việt Nam, người đọc Tuyên ngôn Độc lập ngày 2/9/1945',
+                time: '1890 – 1969', place: 'Kim Liên · Nhà Rồng · Pác Bó · Ba Đình',
+                image: 'https://baotanglichsu.vn/DataFiles/2025/09/News/Thumb/20250904-143806-lOOfVD4V.jpg',
+                imageCaption: 'Ảnh tư liệu về Chủ tịch Hồ Chí Minh tại Ba Đình', imageCredit: 'Bảo tàng Lịch sử Quốc gia', imageSource: 'https://baotanglichsu.vn/fr/Articles/3270/75759/president-ho-chi-minh-symbole-de-laspiration-a-lindependance-et-a-la-liberte.html',
+                quote: 'Không có gì quý hơn độc lập, tự do.',
+                intro: 'Hồ Chí Minh (1890–1969), tên khai sinh Nguyễn Sinh Cung, trong thời gian học tập và hoạt động từng sử dụng các tên Nguyễn Tất Thành, Nguyễn Ái Quốc và nhiều bí danh khác. Người gắn liền với hành trình tìm đường cứu nước, sự ra đời của Đảng Cộng sản Việt Nam và sự kiện đọc Tuyên ngôn Độc lập ngày 2/9/1945.',
+                quickFacts: [
+                    { label: 'Ngày sinh', value: '19/05/1890' },
+                    { label: 'Quê hương', value: 'Kim Liên · Nghệ An' },
+                    { label: 'Mốc lịch sử', value: '02/09/1945' }
+                ],
+                background: 'Hồ Chí Minh sinh ngày 19/5/1890 tại làng Hoàng Trù, thuộc vùng Kim Liên, Nam Đàn, Nghệ An, trong một gia đình nhà nho yêu nước. Cha là Nguyễn Sinh Sắc, mẹ là Hoàng Thị Loan. Tuổi trẻ của Người diễn ra trong bối cảnh Việt Nam bị thực dân Pháp đô hộ; việc chứng kiến đời sống người dân và các phong trào yêu nước đã tác động mạnh đến suy nghĩ của Người.',
+                biography: 'Năm 1911, với tên Văn Ba, Nguyễn Tất Thành rời bến Nhà Rồng, bắt đầu hành trình tìm hiểu thế giới và con đường giải phóng dân tộc. Năm 1919, dưới tên Nguyễn Ái Quốc, Người gửi Bản yêu sách của nhân dân An Nam tới Hội nghị Versailles. Năm 1925, Người tham gia thành lập Hội Việt Nam Cách mạng Thanh niên; tháng 2/1930 chủ trì hội nghị hợp nhất các tổ chức cộng sản. Ngày 28/1/1941, Người trở về nước. Tháng 8/1945, cùng Trung ương lãnh đạo Tổng khởi nghĩa; ngày 2/9/1945 đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.',
+                story: 'Hành trình của Nguyễn Tất Thành không chỉ là chuyến đi qua nhiều quốc gia, mà còn là quá trình quan sát, học hỏi và hoạt động cùng người lao động, các phong trào chính trị ở nhiều nơi. Những trải nghiệm ấy góp phần hình thành cách nhìn về vấn đề dân tộc và thuộc địa. Tên gọi Nguyễn Ái Quốc gắn với hoạt động công khai trên diễn đàn quốc tế năm 1919; tên Hồ Chí Minh gắn với giai đoạn hoạt động cách mạng sau này.',
+                achievements: [
+                    'Năm 1919, gửi Bản yêu sách của nhân dân An Nam tới Hội nghị Versailles, nêu yêu cầu về quyền tự do và bình đẳng.',
+                    'Năm 1925, thành lập Hội Việt Nam Cách mạng Thanh niên và tham gia đào tạo cán bộ, truyền bá tư tưởng cách mạng.',
+                    'Tháng 2/1930, chủ trì hội nghị thành lập Đảng Cộng sản Việt Nam.',
+                    'Năm 1941, trở về nước trực tiếp lãnh đạo phong trào cách mạng; năm 1945 cùng Trung ương lãnh đạo Tổng khởi nghĩa.',
+                    'Ngày 2/9/1945, đọc Tuyên ngôn Độc lập, tuyên bố thành lập nước Việt Nam Dân chủ Cộng hòa.'
+                ],
+                contributions: 'Đóng góp lớn của Hồ Chí Minh gắn với việc xác định con đường đấu tranh giành độc lập, tổ chức lực lượng cách mạng và xây dựng khối đoàn kết dân tộc. Người để lại hệ thống tác phẩm, bài viết và tư tưởng về độc lập dân tộc, quyền tự do, đại đoàn kết và đạo đức công vụ. Khi học tập, cần đặt các hoạt động ấy trong bối cảnh lịch sử Việt Nam và thế giới đầu thế kỷ XX.',
+                milestones: [
+                    { year: '1890', text: 'Sinh tại Nghệ An, tên khai sinh Nguyễn Sinh Cung.' },
+                    { year: '1911', text: 'Rời bến Nhà Rồng, bắt đầu hành trình tìm đường cứu nước.' },
+                    { year: '1919', text: 'Gửi Bản yêu sách của nhân dân An Nam tới Hội nghị Versailles.' },
+                    { year: '1925', text: 'Thành lập Hội Việt Nam Cách mạng Thanh niên, mở lớp huấn luyện cán bộ.' },
+                    { year: '1930', text: 'Chủ trì hội nghị hợp nhất, thành lập Đảng Cộng sản Việt Nam.' },
+                    { year: '1941', text: 'Trở về nước sau hơn 30 năm hoạt động ở nước ngoài.' },
+                    { year: '02/09/1945', text: 'Đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.' },
+                    { year: '1969', text: 'Qua đời tại Hà Nội; di sản tư tưởng và hoạt động tiếp tục được nghiên cứu.' }
+                ],
+                funFacts: [
+                    'Người sử dụng nhiều tên gọi trong từng giai đoạn hoạt động; mỗi tên gắn với một bối cảnh lịch sử cụ thể.',
+                    'Bản yêu sách năm 1919 được gửi tới Hội nghị Versailles, diễn đàn quốc tế sau Chiến tranh thế giới thứ nhất.',
+                    'Tác phẩm “Đường Kách mệnh” tập hợp các bài giảng trong những lớp huấn luyện cán bộ ở Quảng Châu.',
+                    'Ngày 28/1/1941 là mốc Nguyễn Ái Quốc trở về nước sau hơn 30 năm xa Tổ quốc.'
+                ],
+                gallery: [
+                    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg/960px-Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg', caption: 'Chân dung Hồ Chí Minh trong ấn phẩm năm 1945', credit: 'Wikimedia Commons / Gallica', source: 'https://commons.wikimedia.org/wiki/File:Portrait_of_Hồ_Chí_Minh,_from_the_book_Trang_sử_mới,_1945.jpg' },
+                    { src: 'https://image.lecourrier.vn/uploaded/2014/8/15/bh100302600.jpg', caption: 'Ảnh tư liệu Hồ Chí Minh phát biểu trước micro', credit: 'Le Courrier du Vietnam', source: 'https://lecourrier.vn/revolution-daout-message-de-la-nation-et-de-lepoque/108240.html' },
+                    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg/640px-Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg', caption: 'Tư liệu sự kiện đọc Tuyên ngôn Độc lập tại Ba Đình, 2/9/1945', credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Président_Ho-chi-Minh_lit_la_Proclamation-d-indépendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg' },
+                    { src: 'https://www.fahasa.com/blog/wp-content/uploads/2025/05/bac-ra-di-tim-duong.jpeg', caption: 'Ảnh tư liệu minh họa chuyến đi tìm đường cứu nước năm 1911', credit: 'Fahasa Blog', source: 'https://www.fahasa.com/blog/he-lo-ly-do-vi-sao-bac-ho-len-tau-amiral-latouche-treville-ra-di-tim-duong-cuu-nuoc/' }
+                ],
+                sources: [
+                    { label: 'Không gian văn hóa Hồ Chí Minh – Tiểu sử Chủ tịch Hồ Chí Minh', url: 'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su' },
+                    { label: 'Tư liệu – Văn kiện Đảng Cộng sản Việt Nam: Biên niên tiểu sử Hồ Chí Minh', url: 'https://tulieuvankien.dangcongsan.vn/c-mac-angghen-lenin-ho-chi-minh/book/ho-chi-minh/tieu-su-cuoc-doi-va-su-nghiep/ho-chi-minh-bien-nien-tieu-su-tap-2-1930-91945-22' }
+                ]
+            }
+        };
+
+        function escapeHTML(value) {
+            return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+        }
+
+
+        const timelineData = [
+            {
+                year: 'Năm 40', title: 'Khởi nghĩa Hai Bà Trưng',
+                desc: 'Hai Bà Trưng phất cờ khởi nghĩa tại cửa sông Hát; phong trào nhanh chóng lan rộng.',
+                category: 'ancient', period: 'Thời kỳ cổ đại', icon: 'fa-flag', character: 'hai-ba-trung',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hai_ba_trung_Dong_Ho_painting.jpg/960px-Hai_ba_trung_Dong_Ho_painting.jpg',
+                detail: 'Tháng 2 năm 40, Trưng Trắc và Trưng Nhị phát động khởi nghĩa ở cửa sông Hát. Nghĩa quân tập hợp tại Mê Linh, tiến về Luy Lâu – trung tâm cai trị của nhà Đông Hán ở Giao Chỉ. Phong trào nhận được sự hưởng ứng rộng rãi và làm tan rã bộ máy cai trị tại nhiều địa phương.',
+                fact: 'Sau thắng lợi, Trưng Trắc được suy tôn làm vua, đóng đô ở Mê Linh. Bảo tàng Lịch sử Quốc gia ghi lại chính sách miễn thuế trong hai năm của chính quyền Trưng Vương.',
+                significance: 'Khẳng định ý chí tự chủ của cư dân Âu Lạc và vai trò lãnh đạo nổi bật của phụ nữ trong lịch sử.',
+                sources: [{label:'Bảo tàng Lịch sử Quốc gia',url:'https://baotanglichsu.vn/vi/Articles/3098/13485/cuoc-khoi-nghia-hai-ba-trung-nam-40-43-sau-cong-nguyen.html'}]
+            },
+            {
+                year: '1075', title: 'Chủ trương chủ động đối phó nhà Tống',
+                desc: 'Lý Thường Kiệt chủ trương tiến công trước để phá thế chuẩn bị xâm lược của nhà Tống.',
+                category: 'medieval', period: 'Thời kỳ trung đại', icon: 'fa-compass', character: 'ly-thuong-kiet',
+                image: 'https://rgb.vn/wp-content/uploads/2020/04/rgb-creative-art-anh-hung-4000-do-thai-thanh-07.jpg',
+                detail: 'Trước những dấu hiệu chuẩn bị chiến tranh ở vùng biên giới, triều Lý lựa chọn cách đối phó chủ động. Cuộc tiến công năm 1075 nhằm vào các căn cứ quân sự và hậu cần của nhà Tống; sau đó quân Đại Việt rút về, củng cố lực lượng và chuẩn bị phòng thủ.',
+                fact: 'Tư tưởng thường được tóm tắt là “tiến công trước để tự vệ”. Đây là một lựa chọn chiến lược trong bối cảnh cụ thể thế kỷ XI, không nên tách khỏi hoàn cảnh lịch sử khi phân tích.',
+                significance: 'Cho thấy vai trò của dự báo tình hình, chuẩn bị quốc phòng và phối hợp giữa các quyết sách trong triều đình.',
+                sources: [{label:'Bảo tàng Lịch sử Quốc gia – Lý Thường Kiệt',url:'https://baotanglichsu.vn/VI/Articles/3098/16192/ly-thuong-kiet-nguoi-chi-huy-kiet-xuat-cua-cuoc-khang-chien-chong-quan-tong-lan-thu-hai.html'}]
+            },
+            {
+                year: '1077', title: 'Kháng chiến trên phòng tuyến Như Nguyệt',
+                desc: 'Quân dân Đại Việt dưới sự chỉ huy của Lý Thường Kiệt chặn cuộc tiến công của quân Tống.',
+                category: 'medieval', period: 'Thời kỳ trung đại', icon: 'fa-water', character: 'ly-thuong-kiet',
+                image: 'https://mail.nguoikesu.com/images/wiki/tran-nhu-nguyet/31efb130e53be312cf65539dc1f0e1aa.png',
+                detail: 'Cuối năm 1076 và đầu năm 1077, quân Tống tiến vào Đại Việt. Phòng tuyến sông Cầu – Như Nguyệt trở thành nơi diễn ra cuộc kháng chiến quyết định. Sau thời gian giằng co, quân Tống không đạt được mục tiêu tiến quân; Lý Thường Kiệt chủ động giảng hòa để kết thúc chiến tranh.',
+                fact: 'Bài thơ “Nam quốc sơn hà” được tư liệu truyền thống gắn với thời điểm chiến sự căng thẳng và thường được học như lời khẳng định chủ quyền quốc gia.',
+                significance: 'Bảo vệ nền độc lập của Đại Việt; cho thấy sự kết hợp giữa sức mạnh phòng thủ và giải pháp ngoại giao để chấm dứt xung đột.',
+                sources: [{label:'Bảo tàng Lịch sử Quốc gia – Lý Thường Kiệt',url:'https://baotanglichsu.vn/VI/Articles/3098/16192/ly-thuong-kiet-nguoi-chi-huy-kiet-xuat-cua-cuoc-khang-chien-chong-quan-tong-lan-thu-hai.html'}]
+            },
+            {
+                year: '1285', title: 'Kháng chiến chống Nguyên – Mông lần thứ hai',
+                desc: 'Trần Hưng Đạo giữ trọng trách chỉ huy; quân dân nhà Trần giành lại thế chủ động.',
+                category: 'medieval', period: 'Thời kỳ trung đại', icon: 'fa-shield-halved', character: 'tran-hung-dao',
+                image: 'https://danviet.ex-cdn.com/files/f1/thumb_w/650/296231569849192448/2021/9/3/105-1630673676761784619056.jpg',
+                detail: 'Cuối năm 1284, quân Nguyên mở cuộc xâm lược quy mô lớn. Nhà Trần tổ chức rút lui chiến lược để bảo toàn lực lượng; đến năm 1285, các cánh quân Đại Việt phản công và giành thắng lợi ở nhiều địa điểm như Hàm Tử, Chương Dương, Vạn Kiếp. Trần Hưng Đạo giữ vai trò Tiết chế, chỉ huy các lực lượng thủy bộ.',
+                fact: '“Hịch tướng sĩ” thường được đặt trong bối cảnh chuẩn bị kháng chiến, như lời hiệu triệu về trách nhiệm và lòng tự trọng của người cầm quân.',
+                significance: 'Thể hiện sức mạnh đoàn kết của triều đình, quân đội và nhân dân; khẳng định vai trò của người chỉ huy và việc dùng người tài.',
+                sources: [{label:'Trường THPT Trần Hưng Đạo – Sơ lược tiểu sử Trần Hưng Đạo',url:'https://c3tranhungdao.daknong.edu.vn/so-luoc-tieu-su-tran-hung-dao.html'}]
+            },
+            {
+                year: '1287–1288', title: 'Kháng chiến lần thứ ba và chiến thắng Bạch Đằng',
+                desc: 'Quân dân nhà Trần đánh bại cuộc xâm lược lần thứ ba; Trần Hưng Đạo là tổng chỉ huy.',
+                category: 'medieval', period: 'Thời kỳ trung đại', icon: 'fa-ship', character: 'tran-hung-dao',
+                image: 'https://www.vietspacetravel.com/resources/destination/1569037707957-bach-dang-stake-yard-quang-ninh.jpg',
+                detail: 'Cuối năm 1287, quân Nguyên tiếp tục tiến vào Đại Việt. Năm 1288, cuộc kháng chiến đi đến trận quyết chiến trên sông Bạch Đằng. Quân dân nhà Trần tận dụng hiểu biết về địa hình sông nước và thủy triều; đạo thủy quân của đối phương thất bại, Ô Mã Nhi bị bắt.',
+                fact: 'Bãi cọc Bạch Đằng là một trong những dấu tích khảo cổ nổi tiếng gắn với chiến thắng năm 1288. Nhiều điểm trưng bày hiện nay giúp người xem hình dung rõ hơn về di sản lịch sử này.',
+                significance: 'Bảo vệ nền độc lập Đại Việt và góp phần làm thất bại tham vọng bành trướng của đế chế Nguyên ở khu vực.',
+                sources: [{label:'Bảo tàng Lịch sử Quân sự Việt Nam – Bạch Đằng Giang',url:'https://btlsqsvn.mod.gov.vn/tin-tuc/chi-tiet/bach-dang-giang-noi-khi-thieng-song-nui-hoi-tu-a7e6cabf-6f02-42ee-85ea-6163d9ac0599'},{label:'Trường THPT Trần Hưng Đạo',url:'https://c3tranhungdao.daknong.edu.vn/so-luoc-tieu-su-tran-hung-dao.html'}]
+            },
+            {
+                year: '1771', title: 'Phong trào Tây Sơn khởi phát',
+                desc: 'Phong trào Tây Sơn xuất hiện ở vùng Tây Sơn, phát triển thành lực lượng có ảnh hưởng lớn.',
+                category: 'earlymodern', period: 'Thời kỳ cận đại', icon: 'fa-people-group', character: 'quang-trung',
+                image: 'https://hvlq.vn/upload/61311/fck/tuanhvlq/2026_04_12_03_33_581.png',
+                detail: 'Trong bối cảnh xã hội Đàng Trong nhiều biến động, phong trào Tây Sơn khởi phát năm 1771. Nguyễn Nhạc, Nguyễn Huệ và Nguyễn Lữ trở thành những lãnh tụ chủ chốt. Phong trào phát triển rộng, tạo ra những thay đổi lớn trong cục diện chính trị cuối thế kỷ XVIII.',
+                fact: 'Nguyễn Huệ là một trong ba anh em lãnh đạo phong trào; tên Quang Trung là niên hiệu ông sử dụng sau khi lên ngôi hoàng đế năm 1788.',
+                significance: 'Đánh dấu sự trỗi dậy của một phong trào có ảnh hưởng sâu rộng đến tiến trình thống nhất và bảo vệ đất nước cuối thế kỷ XVIII.',
+                sources: [{label:'Trường THCS, THPT Quang Trung Nguyễn Huệ',url:'https://qtnh.edu.vn/gioi-thieu.html'},{label:'Bảo tàng Lịch sử Quốc gia – Triều Tây Sơn',url:'https://baotanglichsu.vn/vi/Articles/4050/trieu-tay-son-1778-1802'}]
+            },
+            {
+                year: '1785', title: 'Chiến thắng Rạch Gầm – Xoài Mút',
+                desc: 'Nguyễn Huệ chỉ huy quân Tây Sơn giành thắng lợi trước lực lượng Xiêm trên sông Tiền.',
+                category: 'earlymodern', period: 'Thời kỳ cận đại', icon: 'fa-water', character: 'quang-trung',
+                image: 'https://mia.vn/media/uploads/blog-du-lich/ve-tham-khu-di-tich-chien-thang-rach-gam-xoai-mut-hao-hung-01-1651058844.jpg',
+                detail: 'Tháng 1 năm 1785, Nguyễn Huệ đưa quân vào vùng Mỹ Tho và lựa chọn khu vực Rạch Gầm – Xoài Mút trên sông Tiền làm nơi quyết chiến. Quân Tây Sơn giành thắng lợi lớn, đánh bại lực lượng Xiêm can thiệp vào Đại Việt. Đây là một dấu mốc tiêu biểu của phong trào Tây Sơn ở Nam Bộ.',
+                fact: 'Rạch Gầm và Xoài Mút là hai nhánh sông nhỏ đổ vào sông Tiền. Khu di tích hiện nay nằm tại vùng Kim Sơn, tỉnh Đồng Tháp (địa danh hành chính có thay đổi theo thời gian).',
+                significance: 'Thể hiện tài chỉ huy của Nguyễn Huệ và sức mạnh của phong trào Tây Sơn trong việc bảo vệ đất nước trước sự can thiệp từ bên ngoài.',
+                sources: [{label:'Bảo tàng Lịch sử Quốc gia – Di tích lịch sử Rạch Gầm – Xoài Mút',url:'https://baotanglichsu.vn/vi/Articles/3091/19881/di-tich-lich-su-rach-gam-xoai-mut.html'},{label:'Cục Di sản văn hóa – Di tích chiến thắng Rạch Gầm – Xoài Mút',url:'https://dsvh.gov.vn/di-tich-lich-su-dia-diem-chien-thang-rach-gam-xoai-mut-1209'}]
+            },
+            {
+                year: '1788–1789', title: 'Quang Trung lên ngôi và đại phá quân Thanh',
+                desc: 'Quang Trung chỉ huy chiến dịch mùa xuân Kỷ Dậu, giành thắng lợi ở Ngọc Hồi – Đống Đa.',
+                category: 'earlymodern', period: 'Thời kỳ cận đại', icon: 'fa-crown', character: 'quang-trung',
+                image: 'https://hvlq.vn/upload/61311/fck/tuanhvlq/2026_04_12_03_33_581.png',
+                detail: 'Cuối năm 1788, Nguyễn Huệ lên ngôi hoàng đế, lấy niên hiệu Quang Trung. Đầu năm 1789, ông chỉ huy quân Tây Sơn tiến ra Bắc và giành thắng lợi trong chiến dịch Ngọc Hồi – Đống Đa, giải phóng Thăng Long. Các trận đánh diễn ra trong những ngày Tết Kỷ Dậu và trở thành dấu mốc nổi bật của lịch sử dân tộc.',
+                fact: 'Ngày mùng 5 Tết Kỷ Dậu gắn với chiến thắng Ngọc Hồi – Đống Đa và được tưởng niệm hằng năm tại nhiều địa phương.',
+                significance: 'Bảo vệ nền độc lập, tạo điều kiện cho triều Tây Sơn triển khai các chủ trương ổn định đời sống và tổ chức lại đất nước.',
+                sources: [{label:'Báo Điện tử Chính phủ – Chiến thắng hiển hách trong lịch sử chống ngoại xâm',url:'https://baochinhphu.vn/chien-thang-hien-hach-trong-lich-su-chong-ngoai-xam-102138325.htm'},{label:'Viện Hàn lâm Khoa học xã hội Việt Nam – Chiến thắng Ngọc Hồi – Đống Đa',url:'https://vass.gov.vn/bai-nghien-cuu-khxh/chien-thang-ngoc-hoi-mua-xuan-nam-ky-dau-1789-dau-an-lich-su-va-van-hoa-560611'}]
+            },
+            {
+                year: '05/06/1911', title: 'Nguyễn Tất Thành rời bến Nhà Rồng',
+                desc: 'Người bắt đầu hành trình tìm hiểu thế giới và con đường giải phóng dân tộc.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-ship', character: 'ho-chi-minh',
+                image: 'https://www.fahasa.com/blog/wp-content/uploads/2025/05/bac-ra-di-tim-duong.jpeg',
+                detail: 'Ngày 5/6/1911, Nguyễn Tất Thành rời bến Nhà Rồng trên con tàu Amiral Latouche-Tréville. Trong nhiều năm tiếp theo, Người đi qua nhiều quốc gia, làm nhiều công việc và quan sát cuộc sống của người lao động, các dân tộc thuộc địa.',
+                fact: 'Trong hành trình này, Nguyễn Tất Thành sử dụng tên Văn Ba. Sau này, tên Nguyễn Ái Quốc gắn với hoạt động của Người tại Pháp.',
+                significance: 'Mở đầu hành trình tìm đường cứu nước, góp phần hình thành nhận thức và con đường hoạt động cách mạng của Nguyễn Ái Quốc – Hồ Chí Minh.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'}]
+            },
+            {
+                year: '1919', title: 'Bản yêu sách của nhân dân An Nam',
+                desc: 'Nguyễn Ái Quốc gửi yêu sách tới Hội nghị Versailles, nêu các quyền tự do cho người Việt.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-file-lines', character: 'ho-chi-minh',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg/960px-Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg',
+                detail: 'Năm 1919, dưới tên Nguyễn Ái Quốc, Người thay mặt nhóm người Việt Nam yêu nước tại Pháp gửi bản yêu sách tới Hội nghị Versailles. Văn bản nêu những yêu cầu về quyền tự do và quyền bình đẳng cho người dân Việt Nam, thu hút sự chú ý của dư luận.',
+                fact: 'Tên Nguyễn Ái Quốc trở nên gắn bó với hoạt động chính trị và báo chí của Người từ giai đoạn ở Pháp.',
+                significance: 'Đưa vấn đề quyền của người Việt Nam và các dân tộc thuộc địa ra một diễn đàn quốc tế sau Chiến tranh thế giới thứ nhất.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'}]
+            },
+            {
+                year: '1925', title: 'Thành lập Hội Việt Nam Cách mạng Thanh niên',
+                desc: 'Nguyễn Ái Quốc tổ chức đào tạo cán bộ và xuất bản báo Thanh niên.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-book-open', character: 'ho-chi-minh',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg/960px-Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg',
+                detail: 'Năm 1925 tại Quảng Châu, Nguyễn Ái Quốc thành lập Hội Việt Nam Cách mạng Thanh niên, mở lớp huấn luyện cán bộ và xuất bản báo Thanh niên. Các bài giảng trong lớp học sau đó được tập hợp thành tác phẩm “Đường Kách mệnh”.',
+                fact: '“Đường Kách mệnh” là một văn kiện lý luận quan trọng, được hình thành từ các bài giảng huấn luyện cán bộ.',
+                significance: 'Góp phần chuẩn bị về tổ chức, cán bộ và tư tưởng cho sự ra đời của chính đảng cách mạng ở Việt Nam.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'}]
+            },
+            {
+                year: '03/02/1930', title: 'Thành lập Đảng Cộng sản Việt Nam',
+                desc: 'Nguyễn Ái Quốc chủ trì hội nghị hợp nhất các tổ chức cộng sản.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-landmark', character: 'ho-chi-minh',
+                image: 'https://tulieuvankien.dangcongsan.vn/Uploads/2019/8/26/20/3487_1.jpg',
+                detail: 'Tháng 2/1930, Nguyễn Ái Quốc chủ trì hội nghị hợp nhất các tổ chức cộng sản tại Cửu Long, Hồng Kông (Trung Quốc). Hội nghị thông qua các văn kiện chính trị cơ bản, đánh dấu sự thành lập Đảng Cộng sản Việt Nam.',
+                fact: 'Các tài liệu về hội nghị ghi nhận vai trò của Nguyễn Ái Quốc trong việc kết nối, thống nhất các tổ chức cộng sản đầu năm 1930.',
+                significance: 'Tạo ra một tổ chức lãnh đạo thống nhất cho phong trào cách mạng Việt Nam trong giai đoạn tiếp theo.',
+                sources: [{label:'Tư liệu – Văn kiện Đảng Cộng sản Việt Nam: Biên niên tiểu sử Hồ Chí Minh',url:'https://tulieuvankien.dangcongsan.vn/c-mac-angghen-lenin-ho-chi-minh/book/ho-chi-minh/tieu-su-cuoc-doi-va-su-nghiep/ho-chi-minh-bien-nien-tieu-su-tap-2-1930-91945-22'}]
+            },
+            {
+                year: '28/01/1941', title: 'Nguyễn Ái Quốc trở về nước',
+                desc: 'Sau hơn 30 năm hoạt động ở nước ngoài, Người trở về Cao Bằng để trực tiếp lãnh đạo cách mạng.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-mountain-sun', character: 'ho-chi-minh',
+                image: 'https://www.vietnamairlines.com/ph/en/useful-information/travel-guide/~/media/SEO-images/2025%20SEO/Traffic%20TA/MB/pac-bo-cave/inside-the-cave-historic-items-like-ho-chi-minhs-wooden-bed-and-stone-desk-are-carefully-preserved.jpg?la=en',
+                detail: 'Ngày 28/1/1941, Nguyễn Ái Quốc trở về nước qua khu vực Cao Bằng. Người cùng Trung ương Đảng xây dựng căn cứ, chuẩn bị lực lượng và định hướng cho phong trào giải phóng dân tộc trong bối cảnh Chiến tranh thế giới thứ hai.',
+                fact: 'Pác Bó, Cao Bằng là địa danh gắn liền với giai đoạn hoạt động này và hiện là một khu di tích lịch sử quan trọng.',
+                significance: 'Đánh dấu giai đoạn trực tiếp lãnh đạo phong trào cách mạng trong nước, hướng tới thời cơ giành chính quyền năm 1945.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'},{label:'Tư liệu – Văn kiện Đảng Cộng sản Việt Nam',url:'https://tulieuvankien.dangcongsan.vn/c-mac-angghen-lenin-ho-chi-minh/book/ho-chi-minh/tieu-su-cuoc-doi-va-su-nghiep/ho-chi-minh-bien-nien-tieu-su-tap-2-1930-91945-22'}]
+            },
+            {
+                year: '02/09/1945', title: 'Tuyên ngôn Độc lập',
+                desc: 'Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-flag', character: 'ho-chi-minh',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg/640px-Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg',
+                detail: 'Ngày 2/9/1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, tuyên bố trước quốc dân và thế giới sự ra đời của nước Việt Nam Dân chủ Cộng hòa. Đây là mốc son mở ra kỷ nguyên độc lập của dân tộc Việt Nam hiện đại.',
+                fact: 'Ngày Quốc khánh Việt Nam được kỷ niệm vào ngày 2 tháng 9 hằng năm, gắn với sự kiện lịch sử này.',
+                significance: 'Khẳng định nền độc lập và quyền tự quyết của dân tộc Việt Nam sau Cách mạng tháng Tám năm 1945.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'},{label:'Tư liệu – Văn kiện Đảng Cộng sản Việt Nam',url:'https://tulieuvankien.dangcongsan.vn/c-mac-angghen-lenin-ho-chi-minh/book/ho-chi-minh/tieu-su-cuoc-doi-va-su-nghiep/ho-chi-minh-bien-nien-tieu-su-tap-2-1930-91945-22'}]
+            },
+            {
+                year: '02/09/1969', title: 'Chủ tịch Hồ Chí Minh qua đời',
+                desc: 'Hồ Chí Minh qua đời tại Hà Nội; cuộc đời và di sản của Người tiếp tục được nghiên cứu.',
+                category: 'modern', period: 'Lịch sử hiện đại', icon: 'fa-book-bookmark', character: 'ho-chi-minh',
+                image: 'https://image.lecourrier.vn/uploaded/2014/8/15/bh100302600.jpg',
+                detail: 'Chủ tịch Hồ Chí Minh qua đời ngày 2/9/1969 tại Hà Nội. Những hoạt động, tác phẩm và tư tưởng của Người trở thành đối tượng nghiên cứu trong lịch sử hiện đại Việt Nam, với nhiều tư liệu lưu trữ và công trình biên niên.',
+                fact: 'Ngày mất của Chủ tịch Hồ Chí Minh trùng ngày 2/9, ngày kỷ niệm Tuyên ngôn Độc lập. Đây là hai sự kiện có ý nghĩa lịch sử khác nhau cùng gắn với một ngày trong năm.',
+                significance: 'Khép lại cuộc đời hoạt động của một nhân vật có ảnh hưởng sâu rộng tới lịch sử Việt Nam thế kỷ XX.',
+                sources: [{label:'Không gian văn hóa Hồ Chí Minh – Tiểu sử',url:'https://khcn.tphcm.gov.vn/khong-gian-van-hoa-ho-chi-minh/gioi-thieu/tieu-su'}]
+            }
+        ];
+
+
+        // Gallery uses a curated, de-duplicated set of distinct visuals.
+        // Historical artwork is explicitly labelled as illustration; each card links to its source.
+        const galleryData = [
+            {
+                title: 'Hai Bà Trưng trong tranh Đông Hồ', category: 'Tranh dân gian',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hai_ba_trung_Dong_Ho_painting.jpg/960px-Hai_ba_trung_Dong_Ho_painting.jpg',
+                desc: 'Tranh dân gian tái hiện Hai Bà Trưng cưỡi voi ra trận; đây là hình ảnh nghệ thuật dân gian, không phải ảnh chụp đương thời.',
+                credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Hai_ba_trung_Dong_Ho_painting.jpg'
+            },
+            {
+                title: 'Hai Bà Trưng trong tranh lịch sử', category: 'Tranh minh họa',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg/960px-Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg',
+                desc: 'Tranh minh họa cuộc khởi nghĩa chống chính quyền đô hộ Đông Hán.',
+                credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Hai_Ba_Trung_%C4%91%C3%A1nh_%C4%91u%E1%BB%95i_gi%E1%BA%B7c_H%C3%A1n.jpg'
+            },
+            {
+                title: 'Tượng Lý Thường Kiệt', category: 'Tượng đài',
+                img: 'https://nhn.1cdn.vn/2023/10/24/tuong-dai-ly-thuong-kiet.jpg',
+                desc: 'Tượng danh tướng Lý Thường Kiệt; tượng đài là hình thức tưởng niệm hiện đại.',
+                credit: 'Người Hà Nội', source: 'https://nguoihanoi.vn/ly-thuong-kiet-nha-quan-su-kiet-xuat-78827.html'
+            },
+            {
+                title: 'Lý Thường Kiệt – tranh minh họa', category: 'Tranh minh họa',
+                img: 'https://rgb.vn/wp-content/uploads/2020/04/rgb-creative-art-anh-hung-4000-do-thai-thanh-07.jpg',
+                desc: 'Tác phẩm minh họa hiện đại của họa sĩ Đỗ Thái Thanh, không phải chân dung đương thời.',
+                credit: 'RGB / Đỗ Thái Thanh', source: 'https://rgb.vn/anh-hung-4000-va-cam-hung-ve-ve-lich-su-tu-hoa-si-do-thai-thanh/'
+            },
+            {
+                title: 'Sơ đồ phòng tuyến Như Nguyệt', category: 'Lược đồ lịch sử',
+                img: 'https://mail.nguoikesu.com/images/wiki/tran-nhu-nguyet/31efb130e53be312cf65539dc1f0e1aa.png',
+                desc: 'Sơ đồ tham khảo về phòng tuyến sông Cầu – Như Nguyệt trong cuộc kháng chiến chống Tống.',
+                credit: 'Người Kể Sử', source: 'https://nguoikesu.com/tu-lieu/quan-su/tran-nhu-nguyet-nam-1077'
+            },
+            {
+                title: 'Tượng Trần Hưng Đạo tại quảng trường Mê Linh', category: 'Tượng đài',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Statue_of_Tran_Hung_Dao_at_Me_Linh_Square.jpg/960px-Statue_of_Tran_Hung_Dao_at_Me_Linh_Square.jpg',
+                desc: 'Tượng đài tưởng niệm Trần Hưng Đạo tại Thành phố Hồ Chí Minh.',
+                credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Statue_of_Tran_Hung_Dao_at_Me_Linh_Square.jpg'
+            },
+            {
+                title: 'Cọc gỗ Bạch Đằng năm 1288', category: 'Hiện vật bảo tàng',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/C%E1%BB%8Dc_nh%E1%BB%8Dn_B%E1%BA%A1ch_%C4%90%E1%BA%B1ng_1288.JPG',
+                desc: 'Hiện vật cọc gỗ liên quan đến trận thủy chiến Bạch Đằng năm 1288, được giới thiệu trong bộ sưu tập tư liệu lịch sử.',
+                credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:C%E1%BB%8Dc_nh%E1%BB%8Dn_B%E1%BA%A1ch_%C4%90%E1%BA%B1ng_1288.JPG'
+            },
+            {
+                title: 'Tượng Hoàng đế Quang Trung tại bảo tàng', category: 'Di tích – bảo tàng',
+                img: 'https://vietnamtourism.vn/imguploads/tourist/Diemden/BinhDinh/QuangTrungMuseum/QuangTrungMuseum2.jpg',
+                desc: 'Tượng Quang Trung tại Bảo tàng Quang Trung, Bình Định.',
+                credit: 'Cục Du lịch Quốc gia Việt Nam', source: 'https://vietnamtourism.vn/en/index.php/tourism/items/1339'
+            },
+            {
+                title: 'Quang Trung trong tranh tái hiện chiến trận', category: 'Tranh minh họa',
+                img: 'https://goldenlife.vn/wp-content/uploads/2025/05/Tran-Ngoc-Hoi-Dong-Da-1024x683.png',
+                desc: 'Tranh tái hiện hình tượng Quang Trung trong chiến dịch Ngọc Hồi – Đống Đa; không phải ảnh tư liệu đương thời.',
+                credit: 'Golden Life Travel', source: 'https://goldenlife.vn/vua-quang-trung-vi-anh-hung-thong-nhat-dat-nuoc/'
+            },
+            {
+                title: 'Khu di tích chiến thắng Rạch Gầm – Xoài Mút', category: 'Di tích lịch sử',
+                img: 'https://mia.vn/media/uploads/blog-du-lich/ve-tham-khu-di-tich-chien-thang-rach-gam-xoai-mut-hao-hung-01-1651058844.jpg',
+                desc: 'Không gian tưởng niệm chiến thắng Rạch Gầm – Xoài Mút năm 1785 trên sông Tiền.',
+                credit: 'MIA.vn', source: 'https://mia.vn/cam-nang-du-lich/ve-tham-khu-di-tich-chien-thang-rach-gam-xoai-mut-hao-hung-5283'
+            },
+            {
+                title: 'Chân dung Hồ Chí Minh trong ấn phẩm năm 1945', category: 'Tư liệu xuất bản',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg/960px-Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh%2C_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi%2C_1945.jpg',
+                desc: 'Chân dung được in trong cuốn Trang sử mới, xuất bản năm 1945.',
+                credit: 'Wikimedia Commons / Gallica', source: 'https://commons.wikimedia.org/wiki/File:Portrait_of_H%E1%BB%93_Ch%C3%AD_Minh,_from_the_book_Trang_s%E1%BB%AD_m%E1%BB%9Bi,_1945.jpg'
+            },
+            {
+                title: 'Thẻ căn cước Nguyễn Ái Quốc năm 1919', category: 'Tư liệu lưu trữ',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Th%E1%BA%BB_c%C4%83n_c%C6%B0%E1%BB%9Bc_Nguy%E1%BB%85n_%C3%81i_Qu%E1%BA%A5c_%28%E9%98%AE%E6%84%9B%E5%9C%8B%29_-_Ng%C3%A0y_b%E1%BB%91n_th%C3%A1ng_ch%C3%ADn_n%C4%83m_1919.jpg',
+                desc: 'Thẻ căn cước được cấp tại Pháp ngày 4/9/1919; tư liệu được lưu trữ trên Wikimedia Commons.',
+                credit: 'Wikimedia Commons · Public Domain Mark', source: 'https://commons.wikimedia.org/wiki/File:Th%E1%BA%BB_c%C4%83n_c%C6%B0%E1%BB%9Bc_Nguy%E1%BB%85n_%C3%81i_Qu%E1%BA%A5c_%28%E9%98%AE%E6%84%9B%E5%9C%8B%29_-_Ng%C3%A0y_b%E1%BB%91n_th%C3%A1ng_ch%C3%ADn_n%C4%83m_1919.jpg'
+            },
+            {
+                title: 'Nguyễn Ái Quốc tại Đại hội Đảng Xã hội Pháp năm 1920', category: 'Tư liệu báo chí',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Nguyen-Ai-Qu%C3%A2c.png',
+                desc: 'Hình ảnh Nguyễn Ái Quốc đăng trên báo Le Petit Parisien trong Đại hội lần thứ 18 của Đảng Xã hội Pháp, tháng 12/1920.',
+                credit: 'Wikimedia Commons · CC0', source: 'https://commons.wikimedia.org/wiki/File:Nguyen-Ai-Qu%C3%A2c.png'
+            },
+            {
+                title: 'Di tích Pác Bó – nơi ở và làm việc năm 1941', category: 'Di tích lịch sử',
+                img: 'https://www.vietnamairlines.com/ph/en/useful-information/travel-guide/~/media/SEO-images/2025%20SEO/Traffic%20TA/MB/pac-bo-cave/inside-the-cave-historic-items-like-ho-chi-minhs-wooden-bed-and-stone-desk-are-carefully-preserved.jpg?la=en',
+                desc: 'Hình ảnh không gian di tích Pác Bó, gắn với giai đoạn Nguyễn Ái Quốc trở về nước năm 1941.',
+                credit: 'Vietnam Airlines', source: 'https://www.vietnamairlines.com/ph/en/useful-information/travel-guide/pac-bo-cave'
+            },
+            {
+                title: 'Tư liệu sự kiện Tuyên ngôn Độc lập ngày 2/9/1945', category: 'Ảnh tư liệu lịch sử',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg/960px-Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d%27ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg',
+                desc: 'Tư liệu hình ảnh về sự kiện Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.',
+                credit: 'Wikimedia Commons', source: 'https://commons.wikimedia.org/wiki/File:Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d-ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg'
+            },
+            {
+                title: 'Bến Nhà Rồng và hành trình năm 1911', category: 'Di tích – lịch sử hiện đại',
+                img: 'https://www.fahasa.com/blog/wp-content/uploads/2025/05/bac-ra-di-tim-duong.jpeg',
+                desc: 'Hình ảnh minh họa bến Nhà Rồng – địa điểm gắn với sự kiện Nguyễn Tất Thành ra đi tìm đường cứu nước.',
+                credit: 'Fahasa Blog', source: 'https://www.fahasa.com/blog/he-lo-ly-do-vi-sao-bac-ho-len-tau-amiral-latouche-treville-ra-di-tim-duong-cuu-nuoc/'
+            },
+            {
+                title: 'Chủ tịch Hồ Chí Minh phát biểu', category: 'Ảnh tư liệu',
+                img: 'https://image.lecourrier.vn/uploaded/2014/8/15/bh100302600.jpg',
+                desc: 'Ảnh tư liệu Chủ tịch Hồ Chí Minh phát biểu; xem trang nguồn để biết thêm chú thích ảnh.',
+                credit: 'Le Courrier du Vietnam', source: 'https://lecourrier.vn/revolution-daout-message-de-la-nation-et-de-lepoque/108240.html'
+            }
+        ];
+
+        const quizQuestions = [
+            { q: "Ai là người lãnh đạo cuộc khởi nghĩa giành độc lập năm 40?", options: ["Hai Bà Trưng", "Lý Thường Kiệt", "Trần Hưng Đạo", "Quang Trung"], answer: 0 },
+            { q: "Bài thơ thần 'Nam quốc sơn hà' gắn liền với danh tướng nào?", options: ["Nguyễn Huệ", "Lý Thường Kiệt", "Trần Quốc Tuấn", "Lê Lợi"], answer: 1 },
+            { q: "Chiến thắng Bạch Đằng năm 1288 đánh tan quân xâm lược nào?", options: ["Quân Tống", "Quân Xiêm", "Quân Nguyên Mông", "Quân Thanh"], answer: 2 },
+            { q: "Hoàng đế Quang Trung – Nguyễn Huệ đại phá quân Thanh vào năm nào?", options: ["1785", "1789", "1288", "1945"], answer: 1 },
+            { q: "Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập vào thời gian nào?", options: ["02/09/1945", "19/05/1890", "05/06/1911", "30/04/1975"], answer: 0 }
+        ];
+
+        // 1. SPA Router Switch Function
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.spa-tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active style from nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-nav');
+            });
+
+            // Activate current tab & link
+            const targetTab = document.getElementById('tab-' + tabId);
+            const targetNav = document.getElementById('nav-' + tabId);
+
+            if (targetTab) targetTab.classList.add('active');
+            if (targetNav) targetNav.classList.add('active-nav');
+
+            // Scroll to top and refresh timeline progress after the tab transition.
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (tabId === 'timeline') window.setTimeout(updateTimelineProgress, 450);
+        }
+
+        // 2. Character Render Logic
+        function renderCharacterProfile(charKey) {
+            const char = charactersData[charKey];
+            if (!char) return;
+
+            document.querySelectorAll('.char-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-crimson', 'text-gold-300');
+                btn.classList.add('text-mahogany');
+            });
+            const activeBtn = document.getElementById('char-btn-' + charKey);
+            if (activeBtn) activeBtn.classList.add('bg-crimson', 'text-gold-300');
+
+            const container = document.getElementById('character-detail-container');
+            const safeName = escapeHTML(char.name);
+            const stats = (char.quickFacts || []).map(item => `
+                <div class="profile-stat"><span>${escapeHTML(item.label)}</span><strong>${escapeHTML(item.value)}</strong></div>
+            `).join('');
+            const milestones = (char.milestones || []).map((item, index) => `
+                <div class="profile-milestone">
+                    <span class="profile-milestone-dot">${index + 1}</span>
+                    <div><strong>${escapeHTML(item.year)}</strong><p>${escapeHTML(item.text)}</p></div>
+                </div>
+            `).join('');
+            const achievements = (char.achievements || []).map(item => `<li>${escapeHTML(item)}</li>`).join('');
+            const facts = (char.funFacts || []).map((item, index) => `
+                <div class="profile-fact"><span class="profile-fact-no">0${index + 1}</span><p>${escapeHTML(item)}</p></div>
+            `).join('');
+            const gallery = (char.gallery || []).map((item, index) => `
+                <button type="button" class="profile-photo-card" onclick="openLightbox('${escapeHTML(item.src)}','${escapeHTML(char.name)}','${escapeHTML(item.caption)} · ${escapeHTML(item.credit)}','${escapeHTML(item.source)}')" aria-label="Xem ảnh: ${escapeHTML(item.caption)}">
+                    <span class="profile-photo"><img src="${escapeHTML(item.src)}" alt="${escapeHTML(item.caption)}" loading="lazy" decoding="async"></span>
+                    <span class="profile-photo-caption">${escapeHTML(item.caption)}</span>
+                    <span class="profile-photo-credit">${escapeHTML(item.credit)} · <a href="${escapeHTML(item.source)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Nguồn ảnh ↗</a></span>
+                </button>
+            `).join('');
+            const sources = (char.sources || []).map((item, index) => `
+                <a class="profile-source-link" href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer">
+                    <span class="profile-source-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    <span><small>Nguồn tham khảo ${index + 1}</small><strong>${escapeHTML(item.label)}</strong></span>
+                </a>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="profile-wrap space-y-9">
+                    <section class="profile-hero">
+                        <div class="profile-hero-image">
+                            <img src="${escapeHTML(char.image)}" alt="${escapeHTML(char.imageCaption || ('Minh họa ' + char.name))}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                            <span class="profile-image-label"><i class="fa-solid fa-landmark"></i> ${escapeHTML(char.imageCaption || 'Nhân vật lịch sử')}</span>
+                            <a class="profile-image-source" href="${escapeHTML(char.imageSource || '#')}" target="_blank" rel="noopener noreferrer">${escapeHTML(char.imageCredit || 'Nguồn ảnh')} · Nguồn ↗</a>
+                        </div>
+                        <div class="profile-hero-copy">
+                            <p class="profile-eyebrow"><i class="fa-solid fa-book-open"></i> Hồ sơ nhân vật</p>
+                            <h2>${safeName}</h2>
+                            <p class="profile-subtitle">${escapeHTML(char.subtitle)}</p>
+                            <p class="profile-intro">${escapeHTML(char.intro)}</p>
+                            <div class="profile-place"><i class="fa-solid fa-location-dot"></i> ${escapeHTML(char.place)}</div>
+                            <div class="profile-stats">${stats}</div>
+                        </div>
+                    </section>
+
+                    <nav class="profile-jumpbar" aria-label="Đi đến nội dung hồ sơ">
+                        <span>Khám phá hồ sơ</span>
+                        <button type="button" onclick="scrollProfileTo('profile-background')">Xuất thân</button>
+                        <button type="button" onclick="scrollProfileTo('profile-life')">Tiểu sử</button>
+                        <button type="button" onclick="scrollProfileTo('profile-achievements')">Thành tựu</button>
+                        <button type="button" onclick="scrollProfileTo('profile-stories')">Chuyện thú vị</button>
+                        <button type="button" onclick="scrollProfileTo('profile-gallery')">Hình ảnh</button>
+                        <button type="button" onclick="scrollProfileTo('profile-sources')">Nguồn</button>
+                    </nav>
+
+                    <section id="profile-background" class="profile-section">
+                        <div class="profile-section-heading"><span>01</span><div><p>GIA ĐÌNH & BỐI CẢNH</p><h3>Xuất thân và tuổi trẻ</h3></div></div>
+                        <p class="profile-prose">${escapeHTML(char.background)}</p>
+                    </section>
+
+                    <section id="profile-life" class="profile-section">
+                        <div class="profile-section-heading"><span>02</span><div><p>HÀNH TRÌNH CUỘC ĐỜI</p><h3>Tiểu sử và các dấu mốc</h3></div></div>
+                        <p class="profile-prose mb-5">${escapeHTML(char.biography)}</p>
+                        <div class="profile-milestone-list">${milestones}</div>
+                    </section>
+
+                    <section id="profile-achievements" class="profile-section">
+                        <div class="profile-section-heading"><span>03</span><div><p>DẤU ẤN ĐỂ LẠI</p><h3>Thành tựu nổi bật</h3></div></div>
+                        <ul class="profile-achievement-list">${achievements}</ul>
+                        <div class="profile-contribution mt-5">
+                            <div class="profile-contribution-icon"><i class="fa-solid fa-seedling"></i></div>
+                            <div><p class="profile-card-kicker">GIÁ TRỊ & DI SẢN</p><h4>Đóng góp đối với lịch sử</h4><p>${escapeHTML(char.contributions)}</p></div>
+                        </div>
+                    </section>
+
+                    <section id="profile-stories" class="profile-section">
+                        <div class="profile-section-heading"><span>04</span><div><p>GÓC NHÌN GẦN GŨI</p><h3>Câu chuyện và điều thú vị</h3></div></div>
+                        <div class="profile-story-card"><i class="fa-solid fa-bookmark"></i><p>${escapeHTML(char.story)}</p></div>
+                        <div class="profile-facts-grid">${facts}</div>
+                        <div class="profile-quote"><i class="fa-solid fa-quote-left"></i><p>${escapeHTML(char.quote).replace(/\n/g, '<br>')}</p></div>
+                    </section>
+
+                    <section id="profile-gallery" class="profile-section">
+                        <div class="profile-section-heading"><span>05</span><div><p>TƯ LIỆU TRỰC QUAN</p><h3>Hình ảnh và di tích liên quan</h3></div></div>
+                        <p class="profile-prose mb-4">Chọn một hình ảnh để phóng to. Chú thích và liên kết nguồn được đặt ngay bên dưới từng ảnh.</p>
+                        <div class="profile-gallery-grid">${gallery}</div>
+                    </section>
+
+                    <section id="profile-sources" class="profile-section">
+                        <div class="profile-section-heading"><span>06</span><div><p>ĐỌC THÊM & ĐỐI CHIẾU</p><h3>Nguồn tham khảo</h3></div></div>
+                        <p class="profile-prose mb-4">Nội dung được biên soạn, diễn giải lại từ các nguồn dưới đây. Một số chi tiết lịch sử có dị bản đã được ghi chú trong hồ sơ.</p>
+                        <div class="profile-sources-grid">${sources}</div>
+                    </section>
+                    <div class="profile-bottom-credit"><i class="fa-solid fa-graduation-cap"></i> Nội dung học tập do tập thể lớp 12A9 – Trường THPT Kế Sách thực hiện</div>
+                </div>
+            `;
+            // All profile images use the document-level fallback if an external image host fails.
+        }
+
+        function scrollProfileTo(sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+function selectCharacterAndSwitch(charKey) {
+            renderCharacterProfile(charKey);
+            switchTab('characters');
+        }
+
+        // 3. Interactive Timeline
+        let activeTimelineFilter = 'all';
+        let timelineObserver = null;
+
+        function renderTimeline() {
+            const container = document.getElementById('timeline-events-container');
+            if (!container) return;
+            container.innerHTML = timelineData.map((item, idx) => {
+                const sourceLinks = (item.sources || []).map(source => `<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.label)} ↗</a>`).join('');
+                return `
+                    <article class="timeline-event timeline-reveal relative flex flex-col md:flex-row items-center justify-between group"
+                        data-timeline-index="${idx}" data-category="${item.category}"
+                        data-search="${escapeHTML((item.year + ' ' + item.title + ' ' + item.desc + ' ' + item.period + ' ' + item.detail + ' ' + item.fact).toLocaleLowerCase('vi'))}" id="timeline-event-${idx}">
+                        <div class="w-full md:w-5/12 ${idx % 2 === 0 ? 'md:text-right md:pr-8' : 'md:order-2 md:text-left md:pl-8'} mb-4 md:mb-0">
+                            <div class="timeline-card bg-white p-4 sm:p-5 rounded-2xl">
+                                <div class="flex ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} items-start gap-3">
+                                    <div class="timeline-thumb w-24 h-24 sm:w-28 sm:h-28 shrink-0">
+                                        <img src="${escapeHTML(item.image)}" alt="Minh họa ${escapeHTML(item.title)}" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="min-w-0 flex-1 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}">
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-crimson text-gold-100 font-extrabold text-[10px] mb-2"><i class="fa-regular fa-clock"></i>${escapeHTML(item.year)}</span>
+                                        <p class="text-[9px] uppercase tracking-[.14em] text-gold-darker font-extrabold mb-1">${escapeHTML(item.period)}</p>
+                                        <h4 class="font-heading font-bold text-crimson text-sm sm:text-base leading-snug">${escapeHTML(item.title)}</h4>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-mahogany/80 mt-3 leading-relaxed">${escapeHTML(item.desc)}</p>
+                                <div class="mt-4 flex flex-wrap ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} gap-2">
+                                    <button type="button" class="timeline-detail-toggle inline-flex items-center gap-2 rounded-xl px-3.5 py-2 bg-[#f7f0e2] border border-[#e5d6b5] text-crimson text-[11px] font-extrabold hover:bg-[#efe2c7]" aria-expanded="false" aria-controls="timeline-detail-${idx}" onclick="toggleTimelineDetail(${idx})">
+                                        <i class="fa-solid fa-sparkles"></i><span>Khám phá sự kiện</span><i class="fa-solid fa-chevron-down text-[9px] transition-transform"></i>
+                                    </button>
+                                    <button type="button" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 bg-white border border-[#e5d6b5] text-mahogany text-[11px] font-extrabold hover:bg-crimson/5" onclick="selectCharacterAndSwitch('${item.character}')">
+                                        <i class="fa-solid fa-user-graduate"></i> Hồ sơ nhân vật
+                                    </button>
+                                </div>
+                                <div id="timeline-detail-${idx}" class="timeline-detail" aria-hidden="true">
+                                    <div class="timeline-detail-inner">
+                                        <div class="timeline-detail-panel mt-4 pt-4 border-t border-[#eee4d2] text-left">
+                                            <div class="timeline-expanded-visual timeline-expanded-visual-text">
+                                                <span class="timeline-expanded-icon"><i class="fa-solid ${escapeHTML(item.icon)}"></i></span>
+                                                <div><span class="timeline-expanded-label">HỒ SƠ SỰ KIỆN</span><h5>${escapeHTML(item.title)}</h5><p>${escapeHTML(item.year)} · ${escapeHTML(item.period)}</p></div>
+                                            </div>
+                                            <div class="timeline-info-block"><p class="timeline-info-title"><i class="fa-solid fa-book-open"></i> Chuyện gì đã diễn ra?</p><p>${escapeHTML(item.detail)}</p></div>
+                                            <div class="timeline-info-block timeline-fun-fact"><p class="timeline-info-title"><i class="fa-solid fa-lightbulb"></i> Bạn có biết?</p><p>${escapeHTML(item.fact)}</p></div>
+                                            <div class="timeline-info-block"><p class="timeline-info-title"><i class="fa-solid fa-compass"></i> Vì sao dấu mốc này quan trọng?</p><p>${escapeHTML(item.significance)}</p></div>
+                                            <div class="timeline-source-row"><span><i class="fa-solid fa-link mr-1"></i>Đọc nguồn:</span>${sourceLinks}</div>
+                                            <div class="mt-4 flex items-center justify-between gap-2">
+                                                <button type="button" class="text-[11px] font-bold text-mahogany/70 hover:text-crimson disabled:opacity-30" onclick="jumpTimelineTo(${idx - 1})" ${idx === 0 ? 'disabled' : ''}><i class="fa-solid fa-arrow-left mr-1"></i>Mốc trước</button>
+                                                <span class="text-[10px] font-bold text-gold-darker">${idx + 1} / ${timelineData.length}</span>
+                                                <button type="button" class="text-[11px] font-bold text-mahogany/70 hover:text-crimson disabled:opacity-30" onclick="jumpTimelineTo(${idx + 1})" ${idx === timelineData.length - 1 ? 'disabled' : ''}>Mốc tiếp theo<i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node absolute left-5 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-gold border-[4px] border-crimson z-10"></div>
+                        <div class="w-full md:w-5/12"></div>
+                    </article>
+                `;
+            }).join('');
+
+            const jump = document.getElementById('timeline-jump');
+            if (jump) jump.innerHTML = '<option value="">Đi nhanh đến một dấu mốc…</option>' + timelineData.map((item, idx) => `<option value="${idx}">${escapeHTML(item.year)} · ${escapeHTML(item.title)}</option>`).join('');
+            setupTimelineReveal();
+            updateTimelineVisibility();
+            updateTimelineProgress();
+        }
+
+function setupTimelineReveal() {
+            if (timelineObserver) timelineObserver.disconnect();
+            const items = document.querySelectorAll('.timeline-reveal:not([hidden])');
+            if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                items.forEach(item => item.classList.add('is-visible'));
+                return;
+            }
+            timelineObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        timelineObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            items.forEach(item => timelineObserver.observe(item));
+        }
+
+        function toggleTimelineDetail(index) {
+            const panel = document.getElementById(`timeline-detail-${index}`);
+            const event = document.getElementById(`timeline-event-${index}`);
+            if (!panel || !event) return;
+            const button = event.querySelector('.timeline-detail-toggle');
+            const willOpen = !panel.classList.contains('open');
+            panel.classList.toggle('open', willOpen);
+            panel.setAttribute('aria-hidden', String(!willOpen));
+            if (button) {
+                button.setAttribute('aria-expanded', String(willOpen));
+                button.querySelector('span').textContent = willOpen ? 'Thu gọn' : 'Xem chi tiết';
+                const chevron = button.querySelector('.fa-chevron-down');
+                if (chevron) chevron.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+            event.classList.toggle('is-highlighted', willOpen);
+        }
+
+        function updateTimelineVisibility() {
+            const searchValue = (document.getElementById('timeline-search')?.value || '').trim().toLocaleLowerCase('vi');
+            let visible = 0;
+            document.querySelectorAll('.timeline-event').forEach(event => {
+                const categoryMatch = activeTimelineFilter === 'all' || event.dataset.category === activeTimelineFilter;
+                const searchMatch = !searchValue || (event.dataset.search || '').includes(searchValue);
+                const show = categoryMatch && searchMatch;
+                event.hidden = !show;
+                if (show) visible++;
+            });
+            const count = document.getElementById('timeline-count');
+            if (count) count.textContent = `Đang hiển thị ${visible}/${timelineData.length} dấu mốc lịch sử`;
+            const noResult = document.getElementById('timeline-empty-state');
+            if (visible === 0 && !noResult) {
+                const empty = document.createElement('div');
+                empty.id = 'timeline-empty-state';
+                empty.className = 'timeline-empty';
+                empty.innerHTML = '<i class="fa-solid fa-magnifying-glass text-2xl text-gold-darker mb-3"></i><p class="font-heading font-bold text-crimson">Chưa tìm thấy dấu mốc phù hợp</p><p class="text-xs mt-1">Hãy thử từ khóa khác hoặc đặt lại bộ lọc.</p>';
+                document.getElementById('timeline-events-container')?.appendChild(empty);
+            } else if (visible > 0 && noResult) {
+                noResult.remove();
+            }
+            document.querySelectorAll('[data-timeline-filter]').forEach(button => {
+                const active = button.dataset.timelineFilter === activeTimelineFilter;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-pressed', String(active));
+            });
+            setupTimelineReveal();
+        }
+
+        function setTimelineFilter(filter) {
+            activeTimelineFilter = filter;
+            updateTimelineVisibility();
+        }
+
+        function resetTimelineFilters() {
+            activeTimelineFilter = 'all';
+            const search = document.getElementById('timeline-search');
+            const jump = document.getElementById('timeline-jump');
+            if (search) search.value = '';
+            if (jump) jump.value = '';
+            updateTimelineVisibility();
+            const tools = document.querySelector('.timeline-tools');
+            if (tools) tools.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function jumpTimelineTo(index) {
+            if (index < 0 || index >= timelineData.length) return;
+            const item = timelineData[index];
+            activeTimelineFilter = 'all';
+            const search = document.getElementById('timeline-search');
+            if (search) search.value = '';
+            updateTimelineVisibility();
+            const target = document.getElementById(`timeline-event-${index}`);
+            if (!target) return;
+            const jump = document.getElementById('timeline-jump');
+            if (jump) jump.value = String(index);
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            target.classList.add('is-highlighted');
+            const panel = document.getElementById(`timeline-detail-${index}`);
+            if (panel && !panel.classList.contains('open')) toggleTimelineDetail(index);
+            window.setTimeout(() => target.classList.remove('is-highlighted'), 1800);
+        }
+
+        function updateTimelineProgress() {
+            const bar = document.getElementById('reading-progress');
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const pageProgress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+            if (bar) bar.style.width = `${Math.max(0, Math.min(100, pageProgress))}%`;
+
+            const section = document.getElementById('tab-timeline');
+            const fill = document.getElementById('timeline-progress-fill');
+            const track = fill?.parentElement;
+            if (section && fill && section.classList.contains('active')) {
+                const rect = section.getBoundingClientRect();
+                const total = section.offsetHeight;
+                const traversed = Math.max(0, Math.min(total, window.innerHeight - rect.top));
+                const percent = total > 0 ? (traversed / total) * 100 : 0;
+                fill.style.width = `${percent}%`;
+                if (track) track.setAttribute('aria-valuenow', String(Math.round(percent)));
+            }
+        }
+
+        function initTimelineInteractions() {
+            document.querySelectorAll('[data-timeline-filter]').forEach(button => {
+                button.addEventListener('click', () => setTimelineFilter(button.dataset.timelineFilter));
+            });
+            document.getElementById('timeline-search')?.addEventListener('input', updateTimelineVisibility);
+            document.getElementById('timeline-jump-btn')?.addEventListener('click', () => {
+                const value = document.getElementById('timeline-jump')?.value;
+                if (value !== undefined && value !== '') jumpTimelineTo(Number(value));
+            });
+            document.getElementById('timeline-jump')?.addEventListener('change', event => {
+                if (event.target.value !== '') jumpTimelineTo(Number(event.target.value));
+            });
+        }
+
+        // 4. Render Gallery – de-duplicate by source record and use safe event listeners.
+        function canonicalGalleryKey(item) {
+            const raw = (item.img || item.source || '').split('#')[0].trim().toLowerCase();
+            return raw.replace(/[?&](width|w|q|auto|fit|crop)=[^&]*/g, '').replace(/[?&]$/, '');
+        }
+
+        function getUniqueGalleryItems() {
+            const seen = new Set();
+            return galleryData.filter(item => {
+                const key = canonicalGalleryKey(item);
+                if (!key || seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        }
+
+        function renderGallery() {
+            const container = document.getElementById('gallery-grid');
+            if (!container) return;
+            const items = getUniqueGalleryItems();
+            container.innerHTML = items.map((item, index) => `
+                <article class="gallery-card group bg-white rounded-2xl overflow-hidden border border-gold/40 shadow-md" data-gallery-index="${index}">
+                    <button type="button" class="gallery-open w-full text-left" aria-label="Phóng to ảnh: ${escapeHTML(item.title)}">
+                        <div class="gallery-image-wrap h-48 overflow-hidden bg-parchment-dark">
+                            <img src="${escapeHTML(item.img)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 pb-2">
+                            <span class="text-[10px] font-bold uppercase text-gold-darker tracking-wider">${escapeHTML(item.category)}</span>
+                            <h4 class="font-heading font-bold text-sm text-crimson mt-1 leading-snug">${escapeHTML(item.title)}</h4>
+                            <p class="text-xs text-mahogany/70 mt-2 leading-relaxed">${escapeHTML(item.desc)}</p>
+                        </div>
+                    </button>
+                    <div class="px-4 pb-4"><a class="gallery-credit" href="${escapeHTML(item.source)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.credit)} · Mở nguồn ↗</a></div>
+                </article>
+            `).join('');
+
+            container.querySelectorAll('[data-gallery-index]').forEach(card => {
+                const index = Number(card.dataset.galleryIndex);
+                card.querySelector('.gallery-open')?.addEventListener('click', () => {
+                    const item = items[index];
+                    openLightbox(item.img, item.title, `${item.desc} · ${item.credit}`, item.source);
+                });
+            });
+        }
+
+        function openLightbox(img, title, desc, source = '') {
+            const modal = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-img');
+            const sourceLink = document.getElementById('lightbox-source');
+            if (!modal || !image) return;
+
+            image.dataset.fallbackApplied = '';
+            image.alt = title || 'Hình ảnh tư liệu';
+            image.src = img || makeFallbackImage(image.alt);
+            document.getElementById('lightbox-title').textContent = title || 'Hình ảnh tư liệu';
+            document.getElementById('lightbox-desc').textContent = desc || '';
+            if (sourceLink) {
+                if (source) {
+                    sourceLink.href = source;
+                    sourceLink.hidden = false;
+                } else {
+                    sourceLink.hidden = true;
+                    sourceLink.removeAttribute('href');
+                }
+            }
+            modal.hidden = false;
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+            modal.querySelector('.lightbox-close')?.focus({ preventScroll: true });
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox');
+            if (!modal || modal.hidden) return;
+            modal.hidden = true;
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        // When an external host blocks or removes an image, show a local SVG illustration instead of a broken-image icon.
+        function makeFallbackImage(label) {
+            const safeLabel = escapeHTML(String(label || 'Tư liệu lịch sử').slice(0, 34));
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+                <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#4d1118"/><stop offset="1" stop-color="#9a6b32"/></linearGradient><pattern id="p" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M0 72L72 0M-18 18L18 -18M54 90L90 54" stroke="#fff1cb" stroke-opacity=".08" stroke-width="2"/></pattern></defs>
+                <rect width="1200" height="800" fill="url(#bg)"/><rect width="1200" height="800" fill="url(#p)"/>
+                <circle cx="600" cy="300" r="138" fill="none" stroke="#f0d58a" stroke-opacity=".75" stroke-width="8"/><path d="M600 190l30 80 82 5-63 52 20 81-69-45-69 45 20-81-63-52 82-5z" fill="#f0d58a" opacity=".9"/>
+                <text x="600" y="550" text-anchor="middle" fill="#fff7e6" font-family="Georgia,serif" font-size="40" font-weight="bold">${safeLabel}</text><text x="600" y="612" text-anchor="middle" fill="#f3d994" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">TƯ LIỆU LỊCH SỬ VIỆT NAM</text>
+                </svg>`;
+            return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+        }
+
+        function applyImageFallback(image) {
+            if (!(image instanceof HTMLImageElement) || image.dataset.fallbackApplied === 'true') return;
+            image.dataset.fallbackApplied = 'true';
+            image.classList.add('image-fallback-active');
+            const label = image.alt || 'Tư liệu lịch sử';
+            image.src = makeFallbackImage(label);
+            image.alt = `${label} – ảnh minh họa thay thế do nguồn ảnh không tải được`;
+        }
+
+        document.addEventListener('error', event => {
+            if (event.target instanceof HTMLImageElement) applyImageFallback(event.target);
+        }, true);
+
+        // Some hosts fail before this script is evaluated. Recheck already-completed image requests.
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('img').forEach(image => {
+                if (image.complete && image.naturalWidth === 0 && image.getAttribute('src')) applyImageFallback(image);
+            });
+        }, { once: true });
+
+        // Close the image viewer with Escape or by clicking on the dimmed backdrop.
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeLightbox();
+        });
+        document.getElementById('lightbox')?.addEventListener('click', event => {
+            if (event.target.id === 'lightbox') closeLightbox();
+        });
+
+                // 5. Quiz Render
+        let currentAnswers = {};
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = `
+                <div class="space-y-6">
+                    ${quizQuestions.map((q, qIdx) => `
+                        <div class="space-y-3 pb-4 border-b border-parchment-deep">
+                            <p class="font-heading font-bold text-sm text-crimson">${qIdx + 1}. ${q.q}</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                ${q.options.map((opt, optIdx) => `
+                                    <button onclick="selectAnswer(${qIdx}, ${optIdx})" id="quiz-btn-${qIdx}-${optIdx}" class="quiz-opt-btn p-3 rounded-xl border border-gold/40 text-xs font-semibold text-left hover:bg-parchment transition-all flex items-center justify-between">
+                                        <span>${opt}</span>
+                                        <i class="fa-regular fa-circle text-gold-dark"></i>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+
+                    <button onclick="submitQuiz()" class="w-full py-3 bg-crimson text-gold-300 font-bold rounded-xl shadow-lg hover:bg-crimson-800 transition-all">
+                        Nộp Bài Trắc Nghiệm
+                    </button>
+                    <div id="quiz-result" class="text-center font-heading font-bold text-base text-crimson"></div>
+                </div>
+            `;
+        }
+
+        function selectAnswer(qIdx, optIdx) {
+            currentAnswers[qIdx] = optIdx;
+            quizQuestions[qIdx].options.forEach((_, idx) => {
+                const btn = document.getElementById(`quiz-btn-${qIdx}-${idx}`);
+                if (btn) {
+                    btn.classList.remove('bg-gold/20', 'border-gold');
+                }
+            });
+            const selectedBtn = document.getElementById(`quiz-btn-${qIdx}-${optIdx}`);
+            if (selectedBtn) {
+                selectedBtn.classList.add('bg-gold/20', 'border-gold');
+            }
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            quizQuestions.forEach((q, idx) => {
+                if (currentAnswers[idx] === q.answer) score++;
+            });
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.innerText = `Bạn đã trả lời đúng ${score}/${quizQuestions.length} câu hỏi!`;
+        }
+
+        // Initialize Application
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCharacterProfile('hai-ba-trung');
+            renderTimeline();
+            initTimelineInteractions();
+            renderGallery();
+            renderQuiz();
+            window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+            window.addEventListener('resize', updateTimelineProgress);
+
+            // Hash router listener
+            if (window.location.hash) {
+                const hash = window.location.hash.replace('#', '');
+                if (['home', 'characters', 'timeline', 'gallery', 'quiz', 'about'].includes(hash)) {
+                    switchTab(hash);
+                }
+            } else {
+                switchTab('home');
+            }
+        });
+    </script>
+</body>
+</html>
