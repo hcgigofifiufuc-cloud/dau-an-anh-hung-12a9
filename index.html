@@ -586,6 +586,114 @@
             .lightbox-image-stage { height:min(62vh,560px); }
         }
 
+
+        /* ===== Hồn Sử Việt – redesigned interactive quiz ===== */
+        #tab-quiz > .text-center { margin-bottom: .25rem; }
+        #quiz-container {
+            max-width: 920px !important;
+            padding: 0 !important;
+            overflow: hidden;
+            border: 1px solid rgba(173,137,66,.38) !important;
+            border-radius: 28px !important;
+            background: #fffdf9 !important;
+            box-shadow: 0 24px 60px rgba(55,25,20,.11) !important;
+        }
+        .quiz-shell { padding: clamp(1rem,3.4vw,2.15rem); }
+        .quiz-topline { display:flex; align-items:center; gap:1rem; padding-bottom:1.25rem; border-bottom:1px solid #eee4d2; }
+        .quiz-brand-mark { display:grid; place-items:center; flex:0 0 52px; width:52px; height:52px; border-radius:17px; color:#f5dfaa; background:linear-gradient(145deg,#7b2024,#3d0b11); box-shadow:0 9px 20px rgba(91,16,23,.18); font-size:1.25rem; }
+        .quiz-top-copy { min-width:0; flex:1; }
+        .quiz-eyebrow { display:block; color:#a17b37; font-size:.61rem; font-weight:900; letter-spacing:.14em; }
+        .quiz-top-copy h3 { margin-top:.22rem; color:#5b1017; font-family:'Merriweather',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-weight:900; }
+        .quiz-count-badge { display:flex; align-items:baseline; gap:.25rem; padding:.55rem .75rem; border:1px solid #ecdfc5; border-radius:13px; color:#80643c; background:#fbf6e9; white-space:nowrap; }
+        .quiz-count-badge strong { color:#681720; font-family:'Merriweather',serif; font-size:1.2rem; }
+        .quiz-count-badge span { font-size:.62rem; font-weight:800; }
+        .quiz-progress-area { padding:1.2rem 0 1.3rem; }
+        .quiz-progress-label { display:flex; justify-content:space-between; align-items:center; margin-bottom:.5rem; color:#84725d; font-size:.68rem; font-weight:800; }
+        .quiz-progress-label strong { color:#7b2024; }
+        .quiz-progress-track { height:8px; overflow:hidden; border-radius:999px; background:#f0e9dc; }
+        .quiz-progress-fill { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#7b2024,#c59d4c); transition:width .45s cubic-bezier(.2,.7,.2,1); }
+        .quiz-steps { display:flex; justify-content:space-between; gap:.55rem; margin-top:1rem; }
+        .quiz-step { display:grid; place-items:center; width:31px; height:31px; border:1px solid #e9dfce; border-radius:50%; color:#9a876e; background:#fff; font-size:.62rem; font-weight:900; transition:transform .22s ease,background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease; }
+        .quiz-step:hover { transform:translateY(-2px); border-color:#bd9a53; }
+        .quiz-step.is-current { color:#fff2d1; border-color:#6a1720; background:#6a1720; box-shadow:0 0 0 5px rgba(197,160,82,.17); transform:scale(1.08); }
+        .quiz-step.is-answered:not(.is-current) { color:#fff; border-color:#9c793c; background:#b18b43; }
+        .quiz-question-card { padding:clamp(1.1rem,3vw,1.8rem); border:1px solid #eee4d2; border-radius:22px; background:linear-gradient(145deg,#fffefa,#fbf7ed); animation:quizQuestionIn .38s cubic-bezier(.2,.75,.25,1) both; }
+        @keyframes quizQuestionIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+        .quiz-question-meta { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.55rem; }
+        .quiz-question-number { display:inline-flex; align-items:center; padding:.4rem .7rem; border-radius:999px; color:#fff1cd; background:#6a1720; font-size:.62rem; font-weight:900; letter-spacing:.08em; }
+        .quiz-question-type { color:#9a8465; font-size:.65rem; font-weight:800; }
+        .quiz-question-type i { margin-right:.25rem; color:#b28b43; }
+        .quiz-question-text { margin-top:1.1rem; color:#4e171b; font-family:'Merriweather',serif; font-size:clamp(1.05rem,2.6vw,1.42rem); line-height:1.65; font-weight:900; }
+        .quiz-hint { display:flex; align-items:center; gap:.45rem; margin-top:.55rem; color:#92816a; font-size:.68rem; line-height:1.5; }
+        .quiz-hint i { color:#b18b43; }
+        .quiz-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; margin-top:1.3rem; }
+        .quiz-choice { display:flex; align-items:center; gap:.8rem; min-width:0; min-height:70px; padding:.85rem .95rem; border:1px solid #e8deca; border-radius:15px; color:#594a3d; background:#fff; text-align:left; box-shadow:0 3px 10px rgba(55,31,20,.025); transition:transform .2s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease; }
+        .quiz-choice:hover { transform:translateY(-2px); border-color:#c5a052; background:#fffcf5; box-shadow:0 9px 20px rgba(55,31,20,.07); }
+        .quiz-choice:focus-visible,.quiz-step:focus-visible,.quiz-nav-btn:focus-visible,.quiz-submit-btn:focus-visible,.quiz-restart-btn:focus-visible { outline:3px solid rgba(197,160,82,.65); outline-offset:3px; }
+        .quiz-choice-letter { display:grid; place-items:center; flex:0 0 34px; width:34px; height:34px; border:1px solid #eadfc8; border-radius:11px; color:#856735; background:#faf5e9; font-family:'Merriweather',serif; font-size:.77rem; font-weight:900; }
+        .quiz-choice-text { flex:1; color:inherit; font-size:.78rem; font-weight:800; line-height:1.6; }
+        .quiz-choice-state { flex:0 0 auto; color:#c9b995; font-size:1.05rem; }
+        .quiz-choice.is-selected { border-color:#a27c35; color:#5b1017; background:linear-gradient(120deg,#fff8e8,#f8efd9); box-shadow:0 0 0 3px rgba(197,160,82,.13),0 9px 20px rgba(91,16,23,.07); }
+        .quiz-choice.is-selected .quiz-choice-letter { color:#fff1c9; border-color:#691820; background:#691820; }
+        .quiz-choice.is-selected .quiz-choice-state { color:#8d6b2d; }
+        .quiz-selection-note { display:flex; align-items:center; gap:.4rem; min-height:1.2rem; margin-top:.8rem; color:#927e62; font-size:.65rem; font-weight:800; }
+        .quiz-alert { display:flex; align-items:flex-start; gap:.6rem; margin-top:1rem; padding:.8rem .95rem; border:1px solid #ead6a9; border-radius:13px; color:#73551e; background:#fff8e7; font-size:.72rem; line-height:1.65; animation:quizQuestionIn .25s ease both; }
+        .quiz-alert[hidden] { display:none !important; }
+        .quiz-footer { display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-top:1.2rem; }
+        .quiz-footer-note { color:#9b876d; font-size:.67rem; font-weight:800; }
+        .quiz-nav-btn,.quiz-submit-btn,.quiz-restart-btn { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; min-height:44px; padding:.7rem 1rem; border-radius:13px; font-size:.73rem; font-weight:900; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+        .quiz-prev { border:1px solid #e9dfcd; color:#775e42; background:#fff; }
+        .quiz-next,.quiz-submit-btn,.quiz-restart-btn { border:1px solid #64151d; color:#fff1cf; background:linear-gradient(110deg,#751d26,#4d0e14); box-shadow:0 8px 18px rgba(91,16,23,.15); }
+        .quiz-next:hover,.quiz-submit-btn:hover,.quiz-restart-btn:hover { transform:translateY(-2px); box-shadow:0 12px 23px rgba(91,16,23,.22); }
+        .quiz-prev:hover:not(:disabled) { transform:translateY(-2px); border-color:#bd9a53; background:#fff9ed; }
+        .quiz-prev:disabled { opacity:.38; cursor:not-allowed; }
+        .quiz-result-screen { padding:clamp(1.1rem,3vw,2rem) 0 .25rem; text-align:center; animation:quizQuestionIn .45s ease both; }
+        .quiz-result-orbit { display:grid; place-items:center; width:94px; height:94px; margin:0 auto 1rem; border:1px solid #e5d3a8; border-radius:50%; background:radial-gradient(circle,#fff9e9 42%,#f5e7c8 43%,#fffaf0 70%); }
+        .quiz-result-medal { display:grid; place-items:center; width:62px; height:62px; border-radius:50%; color:#f7df9f; background:linear-gradient(145deg,#7a2027,#410c12); box-shadow:0 9px 19px rgba(91,16,23,.2); font-size:1.65rem; }
+        .quiz-result-title { margin-top:.45rem; color:#5b1017; font-family:'Merriweather',serif; font-size:clamp(1.3rem,3vw,1.8rem); font-weight:900; }
+        .quiz-result-message { margin:.55rem auto 0; max-width:52ch; color:#786957; font-size:.78rem; line-height:1.75; }
+        .quiz-score-panel { display:flex; justify-content:center; align-items:center; gap:clamp(1rem,5vw,3.2rem); max-width:440px; margin:1.4rem auto 1rem; padding:1.1rem; border:1px solid #eadfc8; border-radius:18px; background:linear-gradient(135deg,#fffaf0,#f7eedc); }
+        .quiz-score-panel > div:not(.quiz-score-divider) { display:flex; flex-direction:column; align-items:center; gap:.25rem; }
+        .quiz-score-panel strong { color:#671720; font-family:'Merriweather',serif; font-size:2rem; line-height:1.1; }
+        .quiz-score-panel strong small { font-size:1rem; color:#9a793e; }
+        .quiz-score-panel span { color:#8b7962; font-size:.65rem; font-weight:800; }
+        .quiz-score-divider { width:1px; height:48px; background:#e4d6b9; }
+        .quiz-result-progress { height:8px; max-width:440px; margin:0 auto 1.5rem; border-radius:999px; overflow:hidden; background:#eee6d8; }
+        .quiz-result-progress span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#7b2024,#c9a452); transition:width .7s ease; }
+        .quiz-review-heading { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin:1.6rem 0 .8rem; text-align:left; }
+        .quiz-review-heading h4 { color:#681720; font-family:'Merriweather',serif; font-size:.9rem; font-weight:900; }
+        .quiz-review-heading h4 i { margin-right:.35rem; color:#a17b37; }
+        .quiz-review-heading > span { color:#9a876e; font-size:.63rem; font-weight:800; }
+        .quiz-review-list { display:grid; gap:.6rem; text-align:left; }
+        .quiz-review-item { display:grid; grid-template-columns:30px minmax(0,1fr); gap:.7rem; align-items:start; padding:.8rem .9rem; border:1px solid #e9e0d1; border-radius:13px; background:#fff; }
+        .quiz-review-icon { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; color:#fff; background:#9a793e; font-size:.7rem; }
+        .quiz-review-item.is-correct { border-color:#d8e6d6; background:#fbfef9; }
+        .quiz-review-item.is-correct .quiz-review-icon { background:#39734d; }
+        .quiz-review-item.is-wrong { border-color:#efd7d5; background:#fffafa; }
+        .quiz-review-item.is-wrong .quiz-review-icon { background:#a43c3c; }
+        .quiz-review-item strong { display:block; color:#5b493b; font-size:.72rem; line-height:1.6; }
+        .quiz-review-item p,.quiz-review-item small { display:block; margin-top:.18rem; color:#7c6e5d; font-size:.66rem; line-height:1.6; }
+        .quiz-review-item small { color:#6d7e58; font-weight:900; }
+        .quiz-review-item.is-wrong small { color:#9a3b35; }
+        .quiz-restart-btn { margin-top:1.25rem; min-width:220px; }
+        @media (max-width:640px) {
+            .quiz-shell { padding:1rem; }
+            .quiz-brand-mark { flex-basis:44px; width:44px; height:44px; border-radius:14px; }
+            .quiz-count-badge { flex-direction:column; align-items:flex-end; gap:0; padding:.45rem .55rem; }
+            .quiz-count-badge strong { font-size:1rem; }
+            .quiz-count-badge span { font-size:.55rem; }
+            .quiz-options { grid-template-columns:1fr; gap:.55rem; }
+            .quiz-choice { min-height:60px; }
+            .quiz-footer { flex-wrap:wrap; }
+            .quiz-footer-note { order:3; width:100%; text-align:center; }
+            .quiz-nav-btn,.quiz-submit-btn { flex:1; }
+            .quiz-score-panel { gap:1rem; }
+        }
+        @media (prefers-reduced-motion:reduce) {
+            .quiz-question-card,.quiz-result-screen,.quiz-alert { animation:none !important; }
+            .quiz-progress-fill,.quiz-choice,.quiz-step,.quiz-nav-btn { transition:none !important; }
+        }
+
     </style>
     <meta name="author" content="Tập thể lớp 12A9 – Trường THPT Kế Sách">
 </head>
@@ -2004,55 +2112,176 @@ function setupTimelineReveal() {
             if (event.target.id === 'lightbox') closeLightbox();
         });
 
-                // 5. Quiz Render
+        // 5. Quiz – one question per view, explicit CSS states and accessible controls.
         let currentAnswers = {};
-        function renderQuiz() {
-            const container = document.getElementById('quiz-container');
-            container.innerHTML = `
-                <div class="space-y-6">
-                    ${quizQuestions.map((q, qIdx) => `
-                        <div class="space-y-3 pb-4 border-b border-parchment-deep">
-                            <p class="font-heading font-bold text-sm text-crimson">${qIdx + 1}. ${q.q}</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                ${q.options.map((opt, optIdx) => `
-                                    <button onclick="selectAnswer(${qIdx}, ${optIdx})" id="quiz-btn-${qIdx}-${optIdx}" class="quiz-opt-btn p-3 rounded-xl border border-gold/40 text-xs font-semibold text-left hover:bg-parchment transition-all flex items-center justify-between">
-                                        <span>${opt}</span>
-                                        <i class="fa-regular fa-circle text-gold-dark"></i>
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `).join('')}
+        let quizCurrentQuestion = 0;
+        let quizSubmitted = false;
 
-                    <button onclick="submitQuiz()" class="w-full py-3 bg-crimson text-gold-300 font-bold rounded-xl shadow-lg hover:bg-crimson-800 transition-all">
-                        Nộp Bài Trắc Nghiệm
-                    </button>
-                    <div id="quiz-result" class="text-center font-heading font-bold text-base text-crimson"></div>
+        function renderQuiz() {
+            currentAnswers = {};
+            quizCurrentQuestion = 0;
+            quizSubmitted = false;
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const container = document.getElementById('quiz-container');
+            if (!container) return;
+            const total = quizQuestions.length;
+            const answered = Object.keys(currentAnswers).length;
+            const progress = Math.round((answered / total) * 100);
+
+            if (quizSubmitted) {
+                renderQuizResult(container);
+                return;
+            }
+
+            const q = quizQuestions[quizCurrentQuestion];
+            const selected = currentAnswers[quizCurrentQuestion];
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            const steps = quizQuestions.map((_, index) => `
+                <button type="button" class="quiz-step ${index === quizCurrentQuestion ? 'is-current' : ''} ${currentAnswers[index] !== undefined ? 'is-answered' : ''}"
+                    data-quiz-step="${index}" aria-label="Đến câu ${index + 1}" aria-current="${index === quizCurrentQuestion ? 'step' : 'false'}">
+                    ${currentAnswers[index] !== undefined ? '<i class="fa-solid fa-check"></i>' : String(index + 1).padStart(2, '0')}
+                </button>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="quiz-shell" aria-live="polite">
+                    <div class="quiz-topline">
+                        <div class="quiz-brand-mark"><i class="fa-solid fa-landmark"></i></div>
+                        <div class="quiz-top-copy">
+                            <span class="quiz-eyebrow">HỒN SỬ VIỆT · THỬ THÁCH KIẾN THỨC</span>
+                            <h3>Khám phá dấu ấn lịch sử</h3>
+                        </div>
+                        <div class="quiz-count-badge"><strong>${String(answered).padStart(2, '0')}</strong><span>/ ${String(total).padStart(2, '0')} đã chọn</span></div>
+                    </div>
+
+                    <div class="quiz-progress-area">
+                        <div class="quiz-progress-label"><span>Tiến độ bài làm</span><strong>${progress}%</strong></div>
+                        <div class="quiz-progress-track" role="progressbar" aria-label="Tiến độ trả lời" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}">
+                            <span class="quiz-progress-fill" style="width:${progress}%"></span>
+                        </div>
+                        <div class="quiz-steps" aria-label="Điều hướng câu hỏi">${steps}</div>
+                    </div>
+
+                    <article class="quiz-question-card" key="quiz-question-${quizCurrentQuestion}">
+                        <div class="quiz-question-meta">
+                            <span class="quiz-question-number">CÂU ${String(quizCurrentQuestion + 1).padStart(2, '0')}</span>
+                            <span class="quiz-question-type"><i class="fa-regular fa-circle-dot"></i> Trắc nghiệm · Chọn một đáp án</span>
+                        </div>
+                        <h4 class="quiz-question-text">${escapeHTML(q.q)}</h4>
+                        <p class="quiz-hint"><i class="fa-regular fa-lightbulb"></i> Hãy chọn đáp án mà bạn cho là chính xác nhất.</p>
+                        <div class="quiz-options" role="group" aria-label="Các phương án trả lời">
+                            ${q.options.map((option, index) => `
+                                <button type="button" class="quiz-choice ${selected === index ? 'is-selected' : ''}" data-quiz-option="${index}" aria-pressed="${selected === index ? 'true' : 'false'}">
+                                    <span class="quiz-choice-letter">${letters[index] || index + 1}</span>
+                                    <span class="quiz-choice-text">${escapeHTML(option)}</span>
+                                    <span class="quiz-choice-state"><i class="fa-solid ${selected === index ? 'fa-circle-check' : 'fa-circle'}"></i></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <p class="quiz-selection-note" id="quiz-selection-note" aria-live="polite">${selected === undefined ? 'Chưa chọn đáp án' : `Đã chọn phương án ${letters[selected] || selected + 1}`}</p>
+                    </article>
+
+                    <div class="quiz-alert" id="quiz-alert" role="status" hidden></div>
+                    <div class="quiz-footer">
+                        <button type="button" class="quiz-nav-btn quiz-prev" data-quiz-prev ${quizCurrentQuestion === 0 ? 'disabled' : ''}>
+                            <i class="fa-solid fa-arrow-left"></i><span>Câu trước</span>
+                        </button>
+                        <span class="quiz-footer-note">Câu ${quizCurrentQuestion + 1} / ${total}</span>
+                        ${quizCurrentQuestion < total - 1
+                            ? `<button type="button" class="quiz-nav-btn quiz-next" data-quiz-next>Tiếp theo <i class="fa-solid fa-arrow-right"></i></button>`
+                            : `<button type="button" class="quiz-submit-btn" data-quiz-submit><i class="fa-solid fa-flag-checkered"></i> Hoàn thành</button>`}
+                    </div>
                 </div>
             `;
+
+            container.querySelectorAll('[data-quiz-option]').forEach(button => {
+                button.addEventListener('click', () => selectAnswer(quizCurrentQuestion, Number(button.dataset.quizOption)));
+            });
+            container.querySelectorAll('[data-quiz-step]').forEach(button => {
+                button.addEventListener('click', () => {
+                    quizCurrentQuestion = Number(button.dataset.quizStep);
+                    renderQuizQuestion();
+                });
+            });
+            container.querySelector('[data-quiz-prev]')?.addEventListener('click', () => {
+                if (quizCurrentQuestion > 0) {
+                    quizCurrentQuestion--;
+                    renderQuizQuestion();
+                }
+            });
+            container.querySelector('[data-quiz-next]')?.addEventListener('click', () => {
+                if (quizCurrentQuestion < total - 1) {
+                    quizCurrentQuestion++;
+                    renderQuizQuestion();
+                }
+            });
+            container.querySelector('[data-quiz-submit]')?.addEventListener('click', submitQuiz);
         }
 
         function selectAnswer(qIdx, optIdx) {
+            if (quizSubmitted || !quizQuestions[qIdx] || !Number.isInteger(optIdx) || optIdx < 0 || optIdx >= quizQuestions[qIdx].options.length) return;
             currentAnswers[qIdx] = optIdx;
-            quizQuestions[qIdx].options.forEach((_, idx) => {
-                const btn = document.getElementById(`quiz-btn-${qIdx}-${idx}`);
-                if (btn) {
-                    btn.classList.remove('bg-gold/20', 'border-gold');
-                }
-            });
-            const selectedBtn = document.getElementById(`quiz-btn-${qIdx}-${optIdx}`);
-            if (selectedBtn) {
-                selectedBtn.classList.add('bg-gold/20', 'border-gold');
-            }
+            renderQuizQuestion();
         }
 
         function submitQuiz() {
-            let score = 0;
-            quizQuestions.forEach((q, idx) => {
-                if (currentAnswers[idx] === q.answer) score++;
-            });
-            const resultDiv = document.getElementById('quiz-result');
-            resultDiv.innerText = `Bạn đã trả lời đúng ${score}/${quizQuestions.length} câu hỏi!`;
+            const missing = quizQuestions.findIndex((_, index) => currentAnswers[index] === undefined);
+            if (missing !== -1) {
+                quizCurrentQuestion = missing;
+                renderQuizQuestion();
+                const alert = document.getElementById('quiz-alert');
+                if (alert) {
+                    alert.hidden = false;
+                    alert.innerHTML = '<i class="fa-solid fa-circle-info"></i><span>Bạn còn câu chưa trả lời. Hãy chọn đáp án cho tất cả câu hỏi trước khi hoàn thành nhé!</span>';
+                }
+                return;
+            }
+            quizSubmitted = true;
+            renderQuizQuestion();
+        }
+
+        function renderQuizResult(container) {
+            const total = quizQuestions.length;
+            const score = quizQuestions.reduce((sum, question, index) => sum + (currentAnswers[index] === question.answer ? 1 : 0), 0);
+            const percent = Math.round((score / total) * 100);
+            const message = score === total ? 'Xuất sắc! Bạn đã nắm rất vững những dấu mốc lịch sử.'
+                : score >= 4 ? 'Rất tốt! Bạn đã ghi nhớ phần lớn kiến thức.'
+                : score >= 3 ? 'Khá tốt! Hãy xem lại những câu còn nhầm lẫn nhé.'
+                : 'Đừng nản lòng. Hãy khám phá hồ sơ nhân vật và thử lại nhé!';
+            const reviews = quizQuestions.map((question, index) => {
+                const correct = currentAnswers[index] === question.answer;
+                const chosen = question.options[currentAnswers[index]];
+                const answer = question.options[question.answer];
+                return `
+                    <article class="quiz-review-item ${correct ? 'is-correct' : 'is-wrong'}">
+                        <span class="quiz-review-icon"><i class="fa-solid ${correct ? 'fa-check' : 'fa-xmark'}"></i></span>
+                        <div><strong>Câu ${index + 1}. ${escapeHTML(question.q)}</strong>
+                        <p>Bạn chọn: ${escapeHTML(chosen)}</p>
+                        ${correct ? '<small>Chính xác!</small>' : `<small>Đáp án đúng: ${escapeHTML(answer)}</small>`}</div>
+                    </article>`;
+            }).join('');
+
+            container.innerHTML = `
+                <div class="quiz-result-screen">
+                    <div class="quiz-result-orbit"><div class="quiz-result-medal"><i class="fa-solid fa-award"></i></div></div>
+                    <span class="quiz-eyebrow">HỒN SỬ VIỆT · KẾT QUẢ CỦA BẠN</span>
+                    <h3 class="quiz-result-title">${score === total ? 'Thành tích tuyệt vời!' : 'Bạn đã hoàn thành!'}</h3>
+                    <p class="quiz-result-message">${message}</p>
+                    <div class="quiz-score-panel">
+                        <div><strong>${score}<small>/${total}</small></strong><span>Số câu trả lời đúng</span></div>
+                        <div class="quiz-score-divider"></div>
+                        <div><strong>${percent}<small>%</small></strong><span>Mức độ hoàn thành</span></div>
+                    </div>
+                    <div class="quiz-result-progress"><span style="width:${percent}%"></span></div>
+                    <div class="quiz-review-heading"><h4><i class="fa-solid fa-list-check"></i> Xem lại câu trả lời</h4><span>${total} câu hỏi</span></div>
+                    <div class="quiz-review-list">${reviews}</div>
+                    <button type="button" class="quiz-restart-btn" data-quiz-restart><i class="fa-solid fa-rotate-right"></i> Làm lại bài trắc nghiệm</button>
+                </div>
+            `;
+            container.querySelector('[data-quiz-restart]')?.addEventListener('click', renderQuiz);
         }
 
         // Initialize Application
