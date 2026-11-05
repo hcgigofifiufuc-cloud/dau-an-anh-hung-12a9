@@ -993,7 +993,7 @@
         <section id="tab-quiz" class="spa-tab-content space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-3">
                 <h2 class="font-heading font-black text-2xl sm:text-3xl text-crimson">THỬ THÁCH KIẾN THỨC LỊCH SỬ</h2>
-                <p class="text-xs sm:text-sm text-mahogany/80">Cùng tự kiểm tra và củng cố kiến thức về các vị anh hùng qua 5 câu hỏi trắc nghiệm.</p>
+                <p class="text-xs sm:text-sm text-mahogany/80">Cùng tự kiểm tra và củng cố kiến thức về các vị anh hùng qua 15 câu hỏi trắc nghiệm.</p>
             </div>
 
             <div id="quiz-container" class="max-w-2xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-gold/40 shadow-xl space-y-6">
@@ -1639,11 +1639,24 @@
         ];
 
         const quizQuestions = [
+            // 5 câu hỏi nền tảng đã có trong phiên bản trước
             { q: "Ai là người lãnh đạo cuộc khởi nghĩa giành độc lập năm 40?", options: ["Hai Bà Trưng", "Lý Thường Kiệt", "Trần Hưng Đạo", "Quang Trung"], answer: 0 },
             { q: "Bài thơ thần 'Nam quốc sơn hà' gắn liền với danh tướng nào?", options: ["Nguyễn Huệ", "Lý Thường Kiệt", "Trần Quốc Tuấn", "Lê Lợi"], answer: 1 },
             { q: "Chiến thắng Bạch Đằng năm 1288 đánh tan quân xâm lược nào?", options: ["Quân Tống", "Quân Xiêm", "Quân Nguyên Mông", "Quân Thanh"], answer: 2 },
             { q: "Hoàng đế Quang Trung – Nguyễn Huệ đại phá quân Thanh vào năm nào?", options: ["1785", "1789", "1288", "1945"], answer: 1 },
-            { q: "Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập vào thời gian nào?", options: ["02/09/1945", "19/05/1890", "05/06/1911", "30/04/1975"], answer: 0 }
+            { q: "Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập vào thời gian nào?", options: ["02/09/1945", "19/05/1890", "05/06/1911", "30/04/1975"], answer: 0 },
+
+            // 10 câu hỏi bổ sung, bám theo nội dung hồ sơ nhân vật và dòng thời gian của website
+            { q: "Sau thắng lợi của cuộc khởi nghĩa năm 40, Trưng Trắc được suy tôn làm vua và đóng đô ở đâu?", options: ["Mê Linh", "Cổ Loa", "Thăng Long", "Hoa Lư"], answer: 0 },
+            { q: "Năm 1077, quân dân nhà Lý chặn bước tiến của quân Tống trên phòng tuyến nào?", options: ["Sông Bạch Đằng", "Sông Cầu – Như Nguyệt", "Sông Tiền", "Sông Hồng"], answer: 1 },
+            { q: "Tác phẩm nào của Trần Quốc Tuấn nhằm khơi dậy trách nhiệm và ý chí của tướng sĩ?", options: ["Bình Ngô đại cáo", "Đường Kách mệnh", "Hịch tướng sĩ", "Chiếu dời đô"], answer: 2 },
+            { q: "Chiến thắng Bạch Đằng gắn với cuộc kháng chiến chống Nguyên – Mông lần thứ mấy?", options: ["Lần thứ nhất", "Lần thứ hai", "Lần thứ tư", "Lần thứ ba"], answer: 3 },
+            { q: "Ai là người chỉ huy quân Tây Sơn giành chiến thắng Rạch Gầm – Xoài Mút năm 1785?", options: ["Nguyễn Huệ", "Nguyễn Nhạc", "Trần Hưng Đạo", "Lý Thường Kiệt"], answer: 0 },
+            { q: "Trong chiến dịch Ngọc Hồi – Đống Đa mùa xuân năm 1789, quân Tây Sơn đánh bại lực lượng xâm lược nào?", options: ["Quân Xiêm", "Quân Thanh", "Quân Tống", "Quân Nguyên – Mông"], answer: 1 },
+            { q: "Theo dòng thời gian của website, phong trào Tây Sơn khởi phát vào năm nào?", options: ["1785", "1789", "1771", "1802"], answer: 2 },
+            { q: "Nguyễn Tất Thành rời bến Nhà Rồng, bắt đầu hành trình tìm đường cứu nước vào năm nào?", options: ["1905", "1919", "1925", "1911"], answer: 3 },
+            { q: "Năm 1919, Nguyễn Ái Quốc gửi Bản yêu sách của nhân dân An Nam tới hội nghị nào?", options: ["Hội nghị Versailles", "Hội nghị Potsdam", "Hội nghị Genève", "Hội nghị Ianta"], answer: 0 },
+            { q: "Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại địa điểm nào?", options: ["Bến Nhà Rồng", "Quảng trường Ba Đình", "Quảng trường Đông Kinh Nghĩa Thục", "Pác Bó"], answer: 1 }
         ];
 
         // 1. SPA Router Switch Function
@@ -2247,10 +2260,11 @@ function setupTimelineReveal() {
             const total = quizQuestions.length;
             const score = quizQuestions.reduce((sum, question, index) => sum + (currentAnswers[index] === question.answer ? 1 : 0), 0);
             const percent = Math.round((score / total) * 100);
-            const message = score === total ? 'Xuất sắc! Bạn đã nắm rất vững những dấu mốc lịch sử.'
-                : score >= 4 ? 'Rất tốt! Bạn đã ghi nhớ phần lớn kiến thức.'
-                : score >= 3 ? 'Khá tốt! Hãy xem lại những câu còn nhầm lẫn nhé.'
-                : 'Đừng nản lòng. Hãy khám phá hồ sơ nhân vật và thử lại nhé!';
+            const message = percent === 100 ? 'Xuất sắc! Bạn đã nắm rất vững những dấu mốc lịch sử.'
+                : percent >= 80 ? 'Rất tốt! Bạn đã ghi nhớ phần lớn kiến thức lịch sử.'
+                : percent >= 60 ? 'Khá tốt! Bạn đã nắm được nhiều nội dung quan trọng.'
+                : percent >= 40 ? 'Bạn đã có nền tảng ban đầu. Hãy xem lại những câu còn nhầm lẫn nhé.'
+                : 'Đừng nản lòng. Hãy khám phá hồ sơ nhân vật và dòng thời gian rồi thử lại nhé!';
             const reviews = quizQuestions.map((question, index) => {
                 const correct = currentAnswers[index] === question.answer;
                 const chosen = question.options[currentAnswers[index]];
